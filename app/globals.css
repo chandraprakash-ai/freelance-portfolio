@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-charcoal: #0f1724;
@@ -11,10 +12,13 @@
 }
 
 @layer base {
-  body {
-    @apply bg-beige text-charcoal font-sans antialiased;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold tracking-tight;
   }
 }

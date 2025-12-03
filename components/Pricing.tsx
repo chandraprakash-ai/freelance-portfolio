@@ -2,9 +2,9 @@ import { Check, Star } from "lucide-react";
 
 export function PremiumPackage() {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="bg-charcoal text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div className="bg-charcoal dark:bg-gray-800 text-white rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-green/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
                     <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -55,48 +55,48 @@ export function PremiumPackage() {
 
 export function PricingTable() {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-                <h3 className="text-2xl font-serif font-bold text-charcoal mb-8 text-center">Compare Packages</h3>
+                <h3 className="text-2xl font-serif font-bold text-charcoal dark:text-white mb-8 text-center">Compare Packages</h3>
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* Starter */}
-                    <div className="border border-gray-200 rounded-lg p-6 hover:border-green/30 transition-colors">
-                        <h4 className="font-bold text-xl text-charcoal mb-2">Starter</h4>
-                        <p className="text-3xl font-bold text-charcoal mb-6">₹12,000</p>
-                        <ul className="space-y-3 mb-8 text-sm text-charcoal/70">
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:border-green/30 transition-colors bg-white dark:bg-gray-800">
+                        <h4 className="font-bold text-xl text-charcoal dark:text-white mb-2">Starter</h4>
+                        <p className="text-3xl font-bold text-charcoal dark:text-white mb-6">₹12,000</p>
+                        <ul className="space-y-3 mb-8 text-sm text-charcoal/70 dark:text-gray-300">
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> 3 Pages</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> Mobile Responsive</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> Basic SEO</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> Contact Form</li>
                         </ul>
-                        <a href="#contact" className="block text-center border border-charcoal text-charcoal py-2 rounded hover:bg-charcoal hover:text-white transition-colors">Choose Starter</a>
+                        <a href="#contact" className="block text-center border border-charcoal dark:border-gray-600 text-charcoal dark:text-white py-2 rounded hover:bg-charcoal hover:text-white dark:hover:bg-gray-700 transition-colors">Choose Starter</a>
                     </div>
 
                     {/* Pro */}
-                    <div className="border border-green/50 bg-green/5 rounded-lg p-6 relative">
+                    <div className="border border-green/50 bg-green/5 dark:bg-green/10 rounded-lg p-6 relative">
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-green text-white text-xs font-bold px-3 py-1 rounded-full">Recommended</div>
-                        <h4 className="font-bold text-xl text-charcoal mb-2">Pro</h4>
-                        <p className="text-3xl font-bold text-charcoal mb-6">₹18,000</p>
-                        <ul className="space-y-3 mb-8 text-sm text-charcoal/70">
+                        <h4 className="font-bold text-xl text-charcoal dark:text-white mb-2">Pro</h4>
+                        <p className="text-3xl font-bold text-charcoal dark:text-white mb-6">₹18,000</p>
+                        <ul className="space-y-3 mb-8 text-sm text-charcoal/70 dark:text-gray-300">
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> 4 Pages</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> Portfolio / Gallery</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> WhatsApp Integration</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> 1 Month Support</li>
                         </ul>
-                        <a href="#contact" className="block text-center bg-charcoal text-white py-2 rounded hover:bg-charcoal/90 transition-colors">Choose Pro</a>
+                        <a href="#contact" className="block text-center bg-charcoal dark:bg-gray-700 text-white py-2 rounded hover:bg-charcoal/90 dark:hover:bg-gray-600 transition-colors">Choose Pro</a>
                     </div>
 
                     {/* Premium (Small view) */}
-                    <div className="border border-gray-200 rounded-lg p-6 hover:border-green/30 transition-colors">
-                        <h4 className="font-bold text-xl text-charcoal mb-2">Premium</h4>
-                        <p className="text-3xl font-bold text-charcoal mb-6">₹29,999</p>
-                        <ul className="space-y-3 mb-8 text-sm text-charcoal/70">
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:border-green/30 transition-colors bg-white dark:bg-gray-800">
+                        <h4 className="font-bold text-xl text-charcoal dark:text-white mb-2">Premium</h4>
+                        <p className="text-3xl font-bold text-charcoal dark:text-white mb-6">₹29,999</p>
+                        <ul className="space-y-3 mb-8 text-sm text-charcoal/70 dark:text-gray-300">
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> 5+ Pages</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> Full Design System</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> Advanced SEO & CRM</li>
                             <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green" /> 3 Months Support</li>
                         </ul>
-                        <a href="#contact" className="block text-center border border-charcoal text-charcoal py-2 rounded hover:bg-charcoal hover:text-white transition-colors">Choose Premium</a>
+                        <a href="#contact" className="block text-center border border-charcoal dark:border-gray-600 text-charcoal dark:text-white py-2 rounded hover:bg-charcoal hover:text-white dark:hover:bg-gray-700 transition-colors">Choose Premium</a>
                     </div>
                 </div>
             </div>

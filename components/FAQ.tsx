@@ -14,21 +14,21 @@ export function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white dark:bg-gray-900">
             <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-12 text-center">Frequently Asked Questions</h2>
+                <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal dark:text-white mb-12 text-center">Frequently Asked Questions</h2>
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                        <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-white dark:bg-gray-800">
                             <button
-                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             >
-                                <span className="font-bold text-charcoal">{faq.q}</span>
+                                <span className="font-bold text-charcoal dark:text-white">{faq.q}</span>
                                 {openIndex === index ? <Minus className="w-5 h-5 text-green" /> : <Plus className="w-5 h-5 text-charcoal/40" />}
                             </button>
                             {openIndex === index && (
-                                <div className="p-6 pt-0 text-charcoal/70 bg-gray-50 border-t border-gray-100">
+                                <div className="p-6 pt-0 text-charcoal/70 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border-t border-gray-100 dark:border-gray-600">
                                     {faq.a}
                                 </div>
                             )}

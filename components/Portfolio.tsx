@@ -58,12 +58,12 @@ export function Portfolio() {
     const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
     return (
-        <section id="portfolio" className="py-20 bg-beige">
+        <section id="portfolio" className="py-20 bg-beige dark:bg-gray-800">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">Selected Projects</h2>
-                        <p className="text-charcoal/70 max-w-xl">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal dark:text-white mb-4">Selected Projects</h2>
+                        <p className="text-charcoal/70 dark:text-gray-300 max-w-xl">
                             A selection of premium websites built for growth-focused businesses.
                         </p>
                     </div>
@@ -79,9 +79,9 @@ export function Portfolio() {
                             className="group cursor-pointer"
                             onClick={() => setSelectedProject(project)}
                         >
-                            <div className="relative overflow-hidden rounded-lg shadow-md mb-4 aspect-video bg-gray-200">
+                            <div className="relative overflow-hidden rounded-lg shadow-md mb-4 aspect-video bg-gray-200 dark:bg-gray-700">
                                 {/* Placeholder Image */}
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-200 group-hover:scale-105 transition-transform duration-500">
+                                <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-500 bg-gray-200 dark:bg-gray-700 group-hover:scale-105 transition-transform duration-500">
                                     <span className="font-medium">[Project Image: {project.title}]</span>
                                 </div>
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -92,8 +92,8 @@ export function Portfolio() {
                             </div>
                             <div className="flex justify-between items-start">
                                 <div>
-                                    <h3 className="text-xl font-bold text-charcoal group-hover:text-green transition-colors">{project.title}</h3>
-                                    <p className="text-sm text-charcoal/60">{project.category}</p>
+                                    <h3 className="text-xl font-bold text-charcoal dark:text-white group-hover:text-green transition-colors">{project.title}</h3>
+                                    <p className="text-sm text-charcoal/60 dark:text-gray-400">{project.category}</p>
                                 </div>
                                 <span className="text-xs font-semibold bg-green/10 text-green px-2 py-1 rounded">
                                     {project.result}
@@ -112,9 +112,9 @@ export function Portfolio() {
                 {/* Modal */}
                 {selectedProject && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedProject(null)}>
-                        <div className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative" onClick={(e) => e.stopPropagation()}>
+                        <div className="bg-white dark:bg-gray-800 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative" onClick={(e) => e.stopPropagation()}>
                             <button
-                                className="absolute top-4 right-4 text-charcoal/50 hover:text-charcoal"
+                                className="absolute top-4 right-4 text-charcoal/50 dark:text-gray-400 hover:text-charcoal dark:hover:text-white"
                                 onClick={() => setSelectedProject(null)}
                             >
                                 <X className="w-6 h-6" />
@@ -122,36 +122,36 @@ export function Portfolio() {
 
                             <div className="mb-6">
                                 <span className="text-green text-sm font-bold uppercase tracking-wider">{selectedProject.category}</span>
-                                <h3 className="text-3xl font-serif font-bold text-charcoal mt-2">{selectedProject.title}</h3>
+                                <h3 className="text-3xl font-serif font-bold text-charcoal dark:text-white mt-2">{selectedProject.title}</h3>
                             </div>
 
-                            <div className="aspect-video bg-gray-100 rounded-lg mb-8 flex items-center justify-center text-gray-400">
+                            <div className="aspect-video bg-gray-100 dark:bg-gray-700 rounded-lg mb-8 flex items-center justify-center text-gray-400 dark:text-gray-500">
                                 [Main Project Image]
                             </div>
 
                             <div className="grid md:grid-cols-3 gap-8">
                                 <div className="md:col-span-2 space-y-6">
                                     <div>
-                                        <h4 className="font-bold text-charcoal mb-2">The Challenge & Solution</h4>
-                                        <p className="text-charcoal/80 leading-relaxed">{selectedProject.description}</p>
+                                        <h4 className="font-bold text-charcoal dark:text-white mb-2">The Challenge & Solution</h4>
+                                        <p className="text-charcoal/80 dark:text-gray-300 leading-relaxed">{selectedProject.description}</p>
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-4">
-                                        <div className="bg-gray-50 p-4 rounded border border-gray-100">
-                                            <p className="text-xs text-charcoal/50 uppercase font-bold mb-1">Before</p>
+                                        <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded border border-gray-100 dark:border-gray-600">
+                                            <p className="text-xs text-charcoal/50 dark:text-gray-400 uppercase font-bold mb-1">Before</p>
                                             <div className="aspect-video bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">[Before Img]</div>
                                         </div>
-                                        <div className="bg-gray-50 p-4 rounded border border-gray-100">
-                                            <p className="text-xs text-charcoal/50 uppercase font-bold mb-1">After</p>
+                                        <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded border border-gray-100 dark:border-gray-600">
+                                            <p className="text-xs text-charcoal/50 dark:text-gray-400 uppercase font-bold mb-1">After</p>
                                             <div className="aspect-video bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">[After Img]</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="space-y-6">
-                                    <div className="bg-beige p-6 rounded-lg">
-                                        <p className="italic text-charcoal/80 mb-4">"{selectedProject.testimonial}"</p>
-                                        <p className="font-bold text-charcoal text-sm">— {selectedProject.client}</p>
+                                    <div className="bg-beige dark:bg-gray-700 p-6 rounded-lg">
+                                        <p className="italic text-charcoal/80 dark:text-gray-300 mb-4">"{selectedProject.testimonial}"</p>
+                                        <p className="font-bold text-charcoal dark:text-white text-sm">— {selectedProject.client}</p>
                                     </div>
 
                                     <button className="w-full bg-green text-white py-3 rounded-md font-medium hover:bg-green/90 transition-colors flex items-center justify-center gap-2">

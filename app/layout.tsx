@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { clsx } from "clsx";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,15 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={clsx(
           inter.variable,
           playfair.variable,
-          "bg-beige text-charcoal font-sans antialiased min-h-screen flex flex-col"
+          "bg-beige dark:bg-gray-900 text-charcoal dark:text-gray-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-300"
         )}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
