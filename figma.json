@@ -1,0 +1,54 @@
+{
+    "documentName": "Chandraprakash Portfolio Design",
+    "version": "1.0",
+    "pages": [
+        {
+            "name": "Landing Page",
+            "frames": [
+                {
+                    "name": "Hero Section",
+                    "width": 1440,
+                    "height": 800
+                },
+                {
+                    "name": "Services Grid",
+                    "width": 1440,
+                    "height": 600
+                },
+                {
+                    "name": "Portfolio Gallery",
+                    "width": 1440,
+                    "height": 900
+                },
+                {
+                    "name": "Pricing Table",
+                    "width": 1440,
+                    "height": 700
+                }
+            ]
+        },
+        {
+            "name": "Mobile View",
+            "frames": [
+                {
+                    "name": "Mobile Hero",
+                    "width": 375,
+                    "height": 812
+                }
+            ]
+        }
+    ],
+    "styles": {
+        "colors": {
+            "Charcoal": "#0f1724",
+            "Green": "#1f8a4f",
+            "Beige": "#f5f3ef",
+            "Gold": "#b68b3a"
+        },
+        "fonts": [
+            "Inter",
+            "Playfair Display"
+        ]
+    },
+    "note": "This is a simulated export. Import into Figma to view structure."
+}
