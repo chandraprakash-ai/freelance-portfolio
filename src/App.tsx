@@ -1,6 +1,7 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Services } from './components/Services'
+import { Addons } from './components/Addons'
 import { Portfolio } from './components/Portfolio'
 import { WorkProcess } from './components/WorkProcess'
 import { Testimonials } from './components/Testimonials'
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Hero />
       <Services />
+      <Addons />
       <PremiumPackage />
       <Portfolio />
       <WorkProcess />
