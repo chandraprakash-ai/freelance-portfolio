@@ -1,7 +1,6 @@
-"use client";
-
 import { useState } from "react";
 import { X, ExternalLink, ArrowRight } from "lucide-react";
+import "./Portfolio.css";
 
 const projects = [
     {
@@ -51,56 +50,56 @@ export function Portfolio() {
     const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
     return (
-        <section id="portfolio" className="py-20 bg-beige dark:bg-gray-800">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+        <section id="portfolio" className="portfolio-section">
+            <div className="container">
+                <div className="header-flex">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal dark:text-white mb-4">Selected Projects</h2>
-                        <p className="text-charcoal/70 dark:text-gray-300 max-w-xl">
+                        <h2 className="section-title">Selected Projects</h2>
+                        <p className="section-description">
                             A selection of premium websites built for growth-focused businesses.
                         </p>
                     </div>
-                    <a href="#" className="hidden md:flex items-center gap-2 text-green font-medium hover:underline mt-4 md:mt-0">
+                    <a href="#" className="view-all-link">
                         View all projects <ArrowRight className="w-4 h-4" />
                     </a>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="projects-grid">
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="group cursor-pointer"
+                            className="project-card group"
                             onClick={() => setSelectedProject(project)}
                         >
-                            <div className="relative overflow-hidden rounded-lg shadow-md mb-4 aspect-video bg-gray-200 dark:bg-gray-700 group-hover:shadow-xl transition-all duration-500">
+                            <div className="card-image-container">
                                 {/* Main Image */}
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="main-image"
                                 />
 
                                 {/* Tilted Alt View Card */}
-                                <div className="absolute -bottom-2 -right-2 w-[40%] aspect-video bg-gray-300 dark:bg-gray-600 rounded-lg border-2 border-white dark:border-gray-800 shadow-lg rotate-6 z-10 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500 flex items-center justify-center overflow-hidden">
+                                <div className="alt-view-card">
                                     <img
                                         src={'altImage' in project && project.altImage ? project.altImage : project.image}
                                         alt={`${project.title} Alt View`}
-                                        className="w-full h-full object-cover"
+                                        className="alt-image"
                                     />
                                 </div>
 
-                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
-                                    <span className="text-white font-medium border border-white/30 px-4 py-2 rounded-full backdrop-blur-sm">
+                                <div className="overlay">
+                                    <span className="view-case-study-btn">
                                         View Case Study
                                     </span>
                                 </div>
                             </div>
-                            <div className="flex justify-between items-start">
+                            <div className="card-content">
                                 <div>
-                                    <h3 className="text-xl font-bold text-charcoal dark:text-white group-hover:text-green transition-colors">{project.title}</h3>
-                                    <p className="text-sm text-charcoal/60 dark:text-gray-400">{project.category}</p>
+                                    <h3 className="project-title">{project.title}</h3>
+                                    <p className="project-category">{project.category}</p>
                                 </div>
-                                <span className="text-xs font-semibold bg-green/10 text-green px-2 py-1 rounded">
+                                <span className="project-result">
                                     {project.result}
                                 </span>
                             </div>
@@ -108,49 +107,49 @@ export function Portfolio() {
                     ))}
                 </div>
 
-                <div className="mt-8 text-center md:hidden">
-                    <a href="#" className="inline-flex items-center gap-2 text-green font-medium hover:underline">
+                <div className="mobile-view-all">
+                    <a href="#" className="mobile-view-all-link">
                         View all projects <ArrowRight className="w-4 h-4" />
                     </a>
                 </div>
 
                 {/* Modal */}
                 {selectedProject && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedProject(null)}>
-                        <div className="bg-white dark:bg-gray-800 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative" onClick={(e) => e.stopPropagation()}>
+                    <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                             <button
-                                className="absolute top-4 right-4 text-charcoal/50 dark:text-gray-400 hover:text-charcoal dark:hover:text-white"
+                                className="close-btn"
                                 onClick={() => setSelectedProject(null)}
                             >
                                 <X className="w-6 h-6" />
                             </button>
 
-                            <div className="mb-6">
-                                <span className="text-green text-sm font-bold uppercase tracking-wider">{selectedProject.category}</span>
-                                <h3 className="text-3xl font-serif font-bold text-charcoal dark:text-white mt-2">{selectedProject.title}</h3>
+                            <div className="modal-header">
+                                <span className="modal-category">{selectedProject.category}</span>
+                                <h3 className="modal-title">{selectedProject.title}</h3>
                             </div>
 
-                            <div className="aspect-video bg-gray-100 dark:bg-gray-700 rounded-lg mb-8 flex items-center justify-center text-gray-400 dark:text-gray-500">
-                                [Main Project Image]
+                            <div className="modal-image-container">
+                                <img
+                                    src={selectedProject.image}
+                                    alt={selectedProject.title}
+                                    className="w-full h-full object-cover rounded-lg"
+                                />
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div className="space-y-6">
-                                    <div>
-                                        <h4 className="font-bold text-charcoal dark:text-white mb-2">The Challenge & Solution</h4>
-                                        <p className="text-charcoal/80 dark:text-gray-300 leading-relaxed">{selectedProject.description}</p>
-                                    </div>
-
-
+                            <div className="modal-grid">
+                                <div>
+                                    <h4 className="challenge-title">The Challenge & Solution</h4>
+                                    <p className="challenge-text">{selectedProject.description}</p>
                                 </div>
 
-                                <div className="space-y-6">
-                                    <div className="bg-beige dark:bg-gray-700 p-6 rounded-lg">
-                                        <p className="italic text-charcoal/80 dark:text-gray-300 mb-4">"{selectedProject.testimonial}"</p>
-                                        <p className="font-bold text-charcoal dark:text-white text-sm">— {selectedProject.client}</p>
+                                <div>
+                                    <div className="testimonial-box">
+                                        <p className="testimonial-text">"{selectedProject.testimonial}"</p>
+                                        <p className="client-name">— {selectedProject.client}</p>
                                     </div>
 
-                                    <button className="w-full bg-green text-white py-3 rounded-md font-medium hover:bg-green/90 transition-colors flex items-center justify-center gap-2">
+                                    <button className="visit-btn">
                                         Visit Live Site <ExternalLink className="w-4 h-4" />
                                     </button>
                                 </div>
