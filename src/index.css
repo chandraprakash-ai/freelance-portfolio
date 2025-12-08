@@ -1,0 +1,78 @@
+:root {
+  /* Light Mode (Default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  /* gray-50 */
+  --bg-tertiary: #f3f4f6;
+  /* gray-100 */
+  --text-primary: #1f2937;
+  /* gray-900 */
+  --text-secondary: #4b5563;
+  /* gray-600 */
+  --text-tertiary: #9ca3af;
+  /* gray-400 */
+  --accent-primary: #22c55e;
+  /* green-500 */
+  --accent-hover: #16a34a;
+  /* green-600 */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Light Mode Variables */
+  --bg-primary: #FDFBF7;
+  /* Very light beige */
+  --bg-secondary: #FFFFFF;
+  /* White */
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #1B211A;
+  /* Dark Green/Black */
+  --text-secondary: rgba(27, 33, 26, 0.8);
+  --text-tertiary: rgba(27, 33, 26, 0.6);
+  --accent-primary: #628141;
+  /* Mid Green */
+  --accent-hover: #4F6A33;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+.dark {
+  /* Dark Mode Variables */
+  --bg-primary: #1B211A;
+  /* User provided Dark Green */
+  --bg-secondary: #232B22;
+  /* Lighter shade of dark green */
+  --bg-tertiary: #2C362B;
+  --text-primary: #EBD5AB;
+  /* User provided Beige */
+  --text-secondary: rgba(235, 213, 171, 0.8);
+  --text-tertiary: rgba(235, 213, 171, 0.6);
+  --accent-primary: #8BAE66;
+  /* User provided Light Green */
+  --accent-hover: #628141;
+  --border-color: #374151;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
