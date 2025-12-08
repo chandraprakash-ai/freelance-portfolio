@@ -10,6 +10,7 @@ const projects = [
         result: "Gamified Tasks",
         image: "/aura-forge.png",
         altImage: "/aura-forge-alt.png",
+        url: "https://aura-forge.vercel.app",
         description: "A gamified productivity platform that turns real-life tasks into quests. Features include XP tracking, leveling up, and a dungeon-crawler aesthetic to make productivity fun.",
         testimonial: "Finally, a to-do list that I actually want to use. It makes work feel like a game.",
         client: "Alex Chen, Indie Developer"
@@ -20,6 +21,8 @@ const projects = [
         category: "Architecture Portfolio",
         result: "Minimalist Design",
         image: "/linea-studio.png",
+        altImage: "/linea-studio-alt.png",
+        url: "https://linea-studio.vercel.app",
         description: "A clean, minimalist portfolio for an architecture firm. The design focuses on negative space and typography to let the architectural work speak for itself.",
         testimonial: "The site perfectly captures our design philosophy. Simple, elegant, and timeless.",
         client: "Sarah Miller, Principal Architect"
@@ -30,6 +33,8 @@ const projects = [
         category: "Analytics Dashboard",
         result: "Real-time Insights",
         image: "/nimbus-metrics.png",
+        altImage: "/nimbus-metrics-alt.png",
+        url: "https://nimbus-metrics.vercel.app",
         description: "A comprehensive metrics dashboard designed for tracking key performance indicators in real-time. Features include customizable widgets, data visualization, and export capabilities.",
         testimonial: "The insights we get from Nimbus are invaluable. It's clean, fast, and easy to use.",
         client: "Jordan Lee, Product Manager"
@@ -40,6 +45,8 @@ const projects = [
         category: "Business Website",
         result: "40% more leads",
         image: "/solar-solutions.png",
+        altImage: "/solar-solutions-alt.png",
+        url: "https://lumosun-energy.vercel.app",
         description: "A complete redesign for a local solar installation company. Focused on trust, clear pricing, and lead capture forms.",
         testimonial: "Chandraprakash transformed our online presence. We got 5 leads in the first week!",
         client: "Rajesh Kumar, CEO"
@@ -54,7 +61,7 @@ export function Portfolio() {
             <div className="container">
                 <div className="header-flex">
                     <div>
-                        <h2 className="section-title">Selected Projects</h2>
+                        <h2 className="portfolio-title">Selected Works</h2>
                         <p className="section-description">
                             A selection of premium websites built for growth-focused businesses.
                         </p>
@@ -72,12 +79,20 @@ export function Portfolio() {
                             onClick={() => setSelectedProject(project)}
                         >
                             <div className="card-image-container">
-                                {/* Main Image */}
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="main-image"
-                                />
+                                <div className="main-image-mask">
+                                    {/* Main Image */}
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="main-image"
+                                    />
+
+                                    <div className="overlay">
+                                        <span className="view-case-study-btn">
+                                            View Case Study
+                                        </span>
+                                    </div>
+                                </div>
 
                                 {/* Tilted Alt View Card */}
                                 <div className="alt-view-card">
@@ -86,12 +101,6 @@ export function Portfolio() {
                                         alt={`${project.title} Alt View`}
                                         className="alt-image"
                                     />
-                                </div>
-
-                                <div className="overlay">
-                                    <span className="view-case-study-btn">
-                                        View Case Study
-                                    </span>
                                 </div>
                             </div>
                             <div className="card-content">
@@ -137,6 +146,10 @@ export function Portfolio() {
                                 />
                             </div>
 
+                            <button className="visit-btn" onClick={() => window.open(selectedProject.url, '_blank')}>
+                                Visit Live Site <ExternalLink className="w-4 h-4" />
+                            </button>
+
                             <div className="modal-grid">
                                 <div>
                                     <h4 className="challenge-title">The Challenge & Solution</h4>
@@ -149,9 +162,7 @@ export function Portfolio() {
                                         <p className="client-name">— {selectedProject.client}</p>
                                     </div>
 
-                                    <button className="visit-btn">
-                                        Visit Live Site <ExternalLink className="w-4 h-4" />
-                                    </button>
+
                                 </div>
                             </div>
 

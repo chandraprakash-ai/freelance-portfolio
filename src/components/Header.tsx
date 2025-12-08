@@ -20,7 +20,7 @@ export function Header() {
             <div className="header-container">
                 <a href="/" className="logo-link group">
                     <h1 className="logo-text">
-                        Chandraprakash Prajapati
+                        Chandraprakash
                     </h1>
                     <p className="logo-subtext">
                         Frontend • Product UI • Fast business sites
@@ -36,7 +36,7 @@ export function Header() {
                         Services
                     </a>
                     <a
-                        href="https://wa.me/91XXXXXXXXXX"
+                        href="https://wa.me/919016460030"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="nav-link"

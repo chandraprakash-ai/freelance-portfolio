@@ -1,32 +1,15 @@
 /* Hero.css */
 .hero-section {
     position: relative;
-    padding-top: 6rem;
-    padding-bottom: 3rem;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
     overflow: hidden;
-    min-height: auto;
+    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     background-color: var(--bg-secondary);
-}
-
-@media (min-width: 768px) {
-    .hero-section {
-        padding-top: 6rem;
-        padding-bottom: 3rem;
-        min-height: auto;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-section {
-        padding-top: 5rem;
-        /* Further reduced */
-        padding-bottom: 2rem;
-        min-height: 100vh;
-        height: 100vh;
-        max-height: 100vh;
-    }
 }
 
 .hero-bg-gradient {
@@ -41,41 +24,15 @@
     max-width: 1400px;
     /* Increased max-width to use more horizontal space */
     margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-@media (min-width: 768px) {
-    .hero-container {
-        padding: 0 2rem;
-        /* Adjusted side padding */
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-container {
-        padding: 0 4rem;
-        /* More side padding on large screens to center content but use width */
-    }
+    padding: 0 4rem;
+    /* More side padding on large screens to center content but use width */
 }
 
 .hero-grid {
     display: grid;
-    gap: 2rem;
-    /* Reduced gap */
+    gap: 3rem;
     align-items: center;
-}
-
-@media (min-width: 768px) {
-    .hero-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-grid {
-        gap: 3rem;
-    }
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .hero-content {
@@ -86,35 +43,13 @@
 }
 
 .hero-title {
-    font-size: 3rem;
-    /* 5xl */
+    font-size: 3.75rem;
+    /* Reduced from 4.5rem */
     font-family: serif;
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1.1;
     margin: 0;
-}
-
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 3rem;
-        /* 5xl */
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 3.5rem;
-        /* Reduced from 4.5rem */
-        line-height: 1.1;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 4.5rem;
-        /* 7xl */
-    }
 }
 
 .highlight-text {
@@ -132,14 +67,8 @@
 
 .hero-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
-}
-
-@media (min-width: 640px) {
-    .hero-buttons {
-        flex-direction: row;
-    }
 }
 
 .btn-primary {
@@ -187,11 +116,15 @@
 
 .hero-mockup-wrapper {
     position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .mockup-container {
     position: relative;
     z-index: 10;
+    aspect-ratio: 16/ 10;
     background-color: var(--bg-primary);
     border-radius: 0.5rem;
     box-shadow: var(--shadow-lg);
@@ -199,6 +132,14 @@
     border: 1px solid var(--border-color);
     transform: rotate(1deg);
     transition: transform 0.5s;
+    width: 100%;
+    /* Further reduced size */
+    margin: 0 auto;
+}
+
+.mockup-container img {
+    width: 100%;
+    height: 100%;
 }
 
 .mockup-container:hover {
@@ -291,4 +232,55 @@
     border-radius: 9999px;
     filter: blur(64px);
     z-index: -10;
+}
+
+/* Responsive Media Queries */
+
+@media (max-width: 1024px) {
+    .hero-section {
+        padding-top: 9rem;
+        padding-bottom: 3rem;
+        min-height: auto;
+        height: auto;
+        max-height: none;
+    }
+
+    .hero-container {
+        padding: 0 2rem;
+    }
+
+    .hero-grid {
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        /* 5xl */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    .hero-container {
+        padding: 2rem 1rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        /* 5xl */
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
 }

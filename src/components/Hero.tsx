@@ -11,7 +11,7 @@ export function Hero() {
 
     // Parallax: mockup moves slower than scroll
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const opacity = useTransform(scrollYProgress, [0.3, 0.8], [1, 0]);
 
     return (
         <section ref={targetRef} className="hero-section">
@@ -60,10 +60,12 @@ export function Hero() {
                             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                             className="mockup-container"
                         >
-                            {/* Placeholder for Hero Image */}
-                            <div className="mockup-placeholder group">
-                                <span className="mockup-text">[Hero Device Mockup]</span>
-                            </div>
+                            <img
+                                src="/linea-studio.png"
+                                alt="Linea Studio Project"
+                                className="w-full h-full object-cover"
+                                style={{ aspectRatio: '16/9' }}
+                            />
                         </motion.div>
 
                         {/* Badge */}

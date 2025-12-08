@@ -34,7 +34,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="info-label">Phone / WhatsApp</p>
-                                    <a href="tel:+91XXXXXXXXXX" className="info-value">+91 XXXXX XXXXX</a>
+                                    <a href="tel:+91 9016460030" className="info-value">+91 90164 60030</a>
                                 </div>
                             </div>
 
@@ -44,7 +44,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="info-label">Email</p>
-                                    <a href="mailto:youremail@example.com" className="info-value">youremail@example.com</a>
+                                    <a href="mailto:chandraprakash.ai@gmail.com" className="info-value">chandraprakash.ai@gmail.com</a>
                                 </div>
                             </div>
 

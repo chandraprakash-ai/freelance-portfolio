@@ -1,4 +1,5 @@
-import { Moon, Sparkles, Languages, Map, Share2, Play, Settings, Search, MessageSquare, Mail, BarChart, PenTool, Lock, Cloud, Globe } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Moon, Sparkles, Languages, Map, Share2, Play, Settings, Search, MessageSquare, Mail, BarChart, PenTool, Lock, Cloud, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Addons.css";
 
@@ -37,6 +38,29 @@ const itemVariants = {
 };
 
 export function Addons() {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(8);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setVisibleCount(4); // 2 cols * 2 rows
+            } else if (window.innerWidth < 1024) {
+                setVisibleCount(6); // 3 cols * 2 rows
+            } else {
+                setVisibleCount(8); // 4 cols * 2 rows
+            }
+        };
+
+        // Set initial
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const displayedAddons = isExpanded ? addons : addons.slice(0, visibleCount);
+
     return (
         <section id="addons" className="addons-section">
             <div className="addons-container">
@@ -55,7 +79,7 @@ export function Addons() {
                     viewport={{ once: true }}
                     className="addons-grid"
                 >
-                    {addons.map((addon, index) => (
+                    {displayedAddons.map((addon, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
@@ -68,6 +92,21 @@ export function Addons() {
                         </motion.div>
                     ))}
                 </motion.div>
+
+                {addons.length > visibleCount && (
+                    <div className="view-more-container">
+                        <button
+                            className="view-more-btn"
+                            onClick={() => setIsExpanded(!isExpanded)}
+                        >
+                            {isExpanded ? (
+                                <>Show Less <ChevronUp className="w-4 h-4" /></>
+                            ) : (
+                                <>View More Add-ons <ChevronDown className="w-4 h-4" /></>
+                            )}
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 /* Addons.css */
 .addons-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background-color: var(--bg-section-alt);
     /* Alternating background */
 }
@@ -9,14 +9,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
-    
-}
-
-@media (min-width: 768px) {
-    .addons-container {
-        padding: 0 1.5rem;
-    }
+    padding: 0 1.5rem;
 }
 
 .addons-title {
@@ -31,20 +24,8 @@
 
 .addons-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    .addons-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .addons-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 .addon-card {
@@ -100,4 +81,56 @@
     font-weight: 700;
     text-align: center;
     margin: 0;
+}
+
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.view-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.view-more-btn:hover {
+    background-color: var(--bg-primary);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+/* Responsive Media Queries */
+
+@media (max-width: 1024px) {
+    .addons-section {
+        padding: 4rem 0;
+    }
+
+    .addons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .addons-section {
+        padding: 3rem 0;
+    }
+
+    .addons-container {
+        padding: 0 1rem;
+    }
+
+    .addons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
