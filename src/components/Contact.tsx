@@ -5,14 +5,64 @@ import "./Contact.css";
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        projectType: "Premium Website (₹29,999)",
+        message: "",
+        terms: false
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { id, value, type } = e.target;
+        const checked = (e.target as HTMLInputElement).checked;
+
+        setFormData(prev => ({
+            ...prev,
+            [id]: type === "checkbox" ? checked : value
+        }));
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+
+        // Simulate form submission delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        // Construct mailto link
+        const subject = `New Project Request from ${formData.name}`;
+        const body = `
+Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Project Type: ${formData.projectType}
+
+Message:
+${formData.message}
+        `.trim();
+
+        const mailtoLink = `mailto:chandraprakash.ai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open mail client
+        window.location.href = mailtoLink;
+
         setIsSubmitting(false);
         setSubmitted(true);
+
+        // Reset form
+        setFormData({
+            name: "",
+            company: "",
+            email: "",
+            phone: "",
+            projectType: "Premium Website (₹29,999)",
+            message: "",
+            terms: false
+        });
     };
 
     return (
@@ -77,7 +127,7 @@ export function Contact() {
                                     <Send className="success-icon" />
                                 </div>
                                 <h3 className="success-title">Message Sent!</h3>
-                                <p className="success-desc">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+                                <p className="success-desc">Thanks for reaching out. Your email client should have opened with the message details.</p>
                                 <button
                                     onClick={() => setSubmitted(false)}
                                     className="reset-button"
@@ -92,28 +142,64 @@ export function Contact() {
                                 <div className="form-grid">
                                     <div>
                                         <label htmlFor="name" className="form-label">Name</label>
-                                        <input type="text" id="name" required className="form-input" placeholder="John Doe" />
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            required
+                                            className="form-input"
+                                            placeholder="John Doe"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                        />
                                     </div>
                                     <div>
                                         <label htmlFor="company" className="form-label">Company</label>
-                                        <input type="text" id="company" className="form-input" placeholder="Your Business" />
+                                        <input
+                                            type="text"
+                                            id="company"
+                                            className="form-input"
+                                            placeholder="Your Business"
+                                            value={formData.company}
+                                            onChange={handleChange}
+                                        />
                                     </div>
                                 </div>
 
                                 <div className="form-grid">
                                     <div>
                                         <label htmlFor="email" className="form-label">Email</label>
-                                        <input type="email" id="email" required className="form-input" placeholder="john@example.com" />
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            required
+                                            className="form-input"
+                                            placeholder="john@example.com"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                        />
                                     </div>
                                     <div>
                                         <label htmlFor="phone" className="form-label">Phone</label>
-                                        <input type="tel" id="phone" required className="form-input" placeholder="+91 98765 43210" />
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            required
+                                            className="form-input"
+                                            placeholder="+91 98765 43210"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                        />
                                     </div>
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="projectType" className="form-label">Project Type</label>
-                                    <select id="projectType" className="form-select">
+                                    <select
+                                        id="projectType"
+                                        className="form-select"
+                                        value={formData.projectType}
+                                        onChange={handleChange}
+                                    >
                                         <option>Premium Website (₹29,999)</option>
                                         <option>Standard Website (₹18,000)</option>
                                         <option>Basic Website (₹12,000)</option>
@@ -123,11 +209,25 @@ export function Contact() {
 
                                 <div className="form-group">
                                     <label htmlFor="message" className="form-label">Message</label>
-                                    <textarea id="message" rows={4} className="form-textarea" placeholder="Tell me about your project..."></textarea>
+                                    <textarea
+                                        id="message"
+                                        rows={4}
+                                        className="form-textarea"
+                                        placeholder="Tell me about your project..."
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                    ></textarea>
                                 </div>
 
                                 <div className="checkbox-group">
-                                    <input type="checkbox" id="terms" required className="form-checkbox" />
+                                    <input
+                                        type="checkbox"
+                                        id="terms"
+                                        required
+                                        className="form-checkbox"
+                                        checked={formData.terms}
+                                        onChange={handleChange}
+                                    />
                                     <label htmlFor="terms" className="checkbox-label">I agree to the privacy policy and terms.</label>
                                 </div>
 
@@ -136,11 +236,11 @@ export function Contact() {
                                     disabled={isSubmitting}
                                     className="submit-button"
                                 >
-                                    {isSubmitting ? "Sending..." : "Send Request"}
+                                    {isSubmitting ? "Opening Email Client..." : "Send Request"}
                                 </button>
 
                                 <p className="demo-note">
-                                    <span className="font-bold">Note:</span> This form is a demo.
+                                    <span className="font-bold">Note:</span> This will open your default email client.
                                 </p>
                             </form>
                         )}
