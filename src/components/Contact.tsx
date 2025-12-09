@@ -5,6 +5,7 @@ import "./Contact.css";
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         name: "",
         company: "",
@@ -43,41 +44,49 @@ export function Contact() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError(null);
 
-        // Simulate form submission delay
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/8f4c9a09825001e7d56c1376fd8615e8", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    company: formData.company,
+                    email: formData.email,
+                    phone: formData.phone,
+                    projectType: formData.projectType,
+                    message: formData.message,
+                    _subject: `New Project Request from ${formData.name}`,
+                    _template: "table"
+                })
+            });
 
-        // Construct mailto link
-        const subject = `New Project Request from ${formData.name}`;
-        const body = `
-Name: ${formData.name}
-Company: ${formData.company}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Project Type: ${formData.projectType}
+            const result = await response.json();
 
-Message:
-${formData.message}
-        `.trim();
-
-        const mailtoLink = `mailto:chandraprakash.ai@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Open mail client
-        window.location.href = mailtoLink;
-
-        setIsSubmitting(false);
-        setSubmitted(true);
-
-        // Reset form
-        setFormData({
-            name: "",
-            company: "",
-            email: "",
-            phone: "",
-            projectType: "Premium Website (₹29,999)",
-            message: "",
-            terms: false
-        });
+            if (response.ok) {
+                setSubmitted(true);
+                // Reset form
+                setFormData({
+                    name: "",
+                    company: "",
+                    email: "",
+                    phone: "",
+                    projectType: "Premium Website (₹29,999)",
+                    message: "",
+                    terms: false
+                });
+            } else {
+                throw new Error(result.message || "Something went wrong. Please try again.");
+            }
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -109,7 +118,7 @@ ${formData.message}
                                 </div>
                                 <div>
                                     <p className="info-label">Email</p>
-                                    <a href="mailto:chandraprakash.ai@gmail.com" className="info-value">chandraprakash.ai@gmail.com</a>
+                                    <a href="mailto:chandraprakash.ai.dev@gmail.com" className="info-value">chandraprakash.ai.dev@gmail.com</a>
                                 </div>
                             </div>
 
@@ -142,7 +151,7 @@ ${formData.message}
                                     <Send className="success-icon" />
                                 </div>
                                 <h3 className="success-title">Message Sent!</h3>
-                                <p className="success-desc">Thanks for reaching out. Your email client should have opened with the message details.</p>
+                                <p className="success-desc">Thanks for reaching out. I'll get back to you shortly.</p>
                                 <button
                                     onClick={() => setSubmitted(false)}
                                     className="reset-button"
@@ -154,12 +163,19 @@ ${formData.message}
                             <form onSubmit={handleSubmit}>
                                 <h3 className="form-title">Request a Quote</h3>
 
+                                {error && (
+                                    <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-3 rounded-lg mb-4 text-sm">
+                                        {error}
+                                    </div>
+                                )}
+
                                 <div className="form-grid">
                                     <div>
                                         <label htmlFor="name" className="form-label">Name</label>
                                         <input
                                             type="text"
                                             id="name"
+                                            name="name"
                                             required
                                             className="form-input"
                                             placeholder="John Doe"
@@ -172,6 +188,7 @@ ${formData.message}
                                         <input
                                             type="text"
                                             id="company"
+                                            name="company"
                                             className="form-input"
                                             placeholder="Your Business"
                                             value={formData.company}
@@ -186,6 +203,7 @@ ${formData.message}
                                         <input
                                             type="email"
                                             id="email"
+                                            name="email"
                                             required
                                             className="form-input"
                                             placeholder="john@example.com"
@@ -198,6 +216,7 @@ ${formData.message}
                                         <input
                                             type="tel"
                                             id="phone"
+                                            name="phone"
                                             required
                                             className="form-input"
                                             placeholder="+91 98765 43210"
@@ -211,6 +230,7 @@ ${formData.message}
                                     <label htmlFor="projectType" className="form-label">Project Type</label>
                                     <select
                                         id="projectType"
+                                        name="projectType"
                                         className="form-select"
                                         value={formData.projectType}
                                         onChange={handleChange}
@@ -226,6 +246,7 @@ ${formData.message}
                                     <label htmlFor="message" className="form-label">Message</label>
                                     <textarea
                                         id="message"
+                                        name="message"
                                         rows={4}
                                         className="form-textarea"
                                         placeholder="Tell me about your project..."
@@ -238,6 +259,7 @@ ${formData.message}
                                     <input
                                         type="checkbox"
                                         id="terms"
+                                        name="terms"
                                         required
                                         className="form-checkbox"
                                         checked={formData.terms}
@@ -251,12 +273,8 @@ ${formData.message}
                                     disabled={isSubmitting}
                                     className="submit-button"
                                 >
-                                    {isSubmitting ? "Opening Email Client..." : "Send Request"}
+                                    {isSubmitting ? "Sending..." : "Send Request"}
                                 </button>
-
-                                <p className="demo-note">
-                                    <span className="font-bold">Note:</span> This will open your default email client.
-                                </p>
                             </form>
                         )}
                     </div>

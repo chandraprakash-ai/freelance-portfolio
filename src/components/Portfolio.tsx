@@ -14,7 +14,7 @@ const projects = [
         url: "https://aura-forge.vercel.app",
         description: "A gamified productivity platform that turns real-life tasks into quests. Features include XP tracking, leveling up, and a dungeon-crawler aesthetic to make productivity fun.",
         testimonial: "Finally, a to-do list that I actually want to use. It makes work feel like a game.",
-        client: "Alex Chen, Indie Developer"
+        client: "Krushal Chabadiya, Indie Developer"
     },
     {
         id: 2,
@@ -23,10 +23,10 @@ const projects = [
         result: "Minimalist Design",
         image: "/linea-studio.png",
         altImage: "/linea-studio-alt.png",
-        url: "https://linea-studio.vercel.app",
+        url: "https://linea-studios.vercel.app",
         description: "A clean, minimalist portfolio for an architecture firm. The design focuses on negative space and typography to let the architectural work speak for itself.",
         testimonial: "The site perfectly captures our design philosophy. Simple, elegant, and timeless.",
-        client: "Sarah Miller, Principal Architect"
+        client: "Het Kapadiya, Principal Architect"
     },
     {
         id: 3,
@@ -38,20 +38,20 @@ const projects = [
         url: "https://nimbus-metrics.vercel.app",
         description: "A comprehensive metrics dashboard designed for tracking key performance indicators in real-time. Features include customizable widgets, data visualization, and export capabilities.",
         testimonial: "The insights we get from Nimbus are invaluable. It's clean, fast, and easy to use.",
-        client: "Jordan Lee, Product Manager"
+        client: "Nimish Kate, Product Manager"
     },
-    {
-        id: 4,
-        title: "Solar Solutions Inc.",
-        category: "Business Website",
-        result: "40% more leads",
-        image: "/solar-solutions.png",
-        altImage: "/solar-solutions-alt.png",
-        url: "https://lumosun-energy.vercel.app",
-        description: "A complete redesign for a local solar installation company. Focused on trust, clear pricing, and lead capture forms.",
-        testimonial: "Chandraprakash transformed our online presence. We got 5 leads in the first week!",
-        client: "Rajesh Kumar, CEO"
-    },
+    // {
+    //     id: 4,
+    //     title: "Solar Solutions Inc.",
+    //     category: "Business Website",
+    //     result: "40% more leads",
+    //     image: "/solar-solutions.png",
+    //     altImage: "/solar-solutions-alt.png",
+    //     url: "https://lumosun-energy.vercel.app",
+    //     description: "A complete redesign for a local solar installation company. Focused on trust, clear pricing, and lead capture forms.",
+    //     testimonial: "Chandraprakash transformed our online presence. We got 5 leads in the first week!",
+    //     client: "Rajesh Kumar, CEO"
+    // },
 ];
 
 function ProjectImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
