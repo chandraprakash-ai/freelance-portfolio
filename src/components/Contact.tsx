@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
 import "./Contact.css";
 
@@ -14,6 +14,21 @@ export function Contact() {
         message: "",
         terms: false
     });
+
+    useEffect(() => {
+        const handlePackageSelected = (e: Event) => {
+            const customEvent = e as CustomEvent;
+            if (customEvent.detail) {
+                setFormData(prev => ({
+                    ...prev,
+                    projectType: customEvent.detail
+                }));
+            }
+        };
+
+        window.addEventListener('packageSelected', handlePackageSelected);
+        return () => window.removeEventListener('packageSelected', handlePackageSelected);
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { id, value, type } = e.target;

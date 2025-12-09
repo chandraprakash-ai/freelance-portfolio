@@ -2,6 +2,13 @@ import { Check, Star } from "lucide-react";
 import "./Pricing.css";
 
 export function PremiumPackage() {
+    const handleSelect = (packageName: string) => {
+        const event = new CustomEvent('packageSelected', { detail: packageName });
+        window.dispatchEvent(event);
+        // Smooth scroll to contact
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <section className="pricing-section">
             <div className="pricing-container">
@@ -21,9 +28,12 @@ export function PremiumPackage() {
                                 <span className="price-amount">₹29,999</span>
                                 <span className="price-period">/ one-time</span>
                             </div>
-                            <a href="#contact" className="cta-button">
+                            <button
+                                onClick={() => handleSelect("Premium Website (₹29,999)")}
+                                className="cta-button"
+                            >
                                 Get Started Now
-                            </a>
+                            </button>
                         </div>
 
                         <div className="features-box">
@@ -55,6 +65,12 @@ export function PremiumPackage() {
 }
 
 export function PricingTable() {
+    const handleSelect = (packageName: string) => {
+        const event = new CustomEvent('packageSelected', { detail: packageName });
+        window.dispatchEvent(event);
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <section className="pricing-section">
             <div className="pricing-table-container">
@@ -70,7 +86,7 @@ export function PricingTable() {
                             <li className="card-feature-item"><Check className="card-check-icon" /> Basic SEO</li>
                             <li className="card-feature-item"><Check className="card-check-icon" /> Contact Form</li>
                         </ul>
-                        <a href="#contact" className="card-button">Choose Starter</a>
+                        <button onClick={() => handleSelect("Basic Website (₹12,000)")} className="card-button">Choose Starter</button>
                     </div>
 
                     {/* Pro */}
@@ -84,7 +100,7 @@ export function PricingTable() {
                             <li className="card-feature-item"><Check className="card-check-icon" /> WhatsApp Integration</li>
                             <li className="card-feature-item"><Check className="card-check-icon" /> 1 Month Support</li>
                         </ul>
-                        <a href="#contact" className="card-button primary">Choose Pro</a>
+                        <button onClick={() => handleSelect("Standard Website (₹18,000)")} className="card-button primary">Choose Pro</button>
                     </div>
 
                     {/* Premium (Small view) */}
@@ -97,7 +113,7 @@ export function PricingTable() {
                             <li className="card-feature-item"><Check className="card-check-icon" /> Advanced SEO & CRM</li>
                             <li className="card-feature-item"><Check className="card-check-icon" /> 3 Months Support</li>
                         </ul>
-                        <a href="#contact" className="card-button">Choose Premium</a>
+                        <button onClick={() => handleSelect("Premium Website (₹29,999)")} className="card-button">Choose Premium</button>
                     </div>
                 </div>
             </div>
