@@ -204,7 +204,7 @@
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     padding: 1.5rem;
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
     background-color: var(--bg-primary);
     box-shadow: var(--shadow-md);
 }

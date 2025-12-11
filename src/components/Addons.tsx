@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Moon, Sparkles, Languages, Map, Share2, Play, Settings, Search, MessageSquare, Mail, BarChart, PenTool, Lock, Cloud, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Addons.css";
+import { fadeInUp, scaleUp, staggerContainer } from "../utils/animations";
 
 const addons = [
     { name: "Dark Mode", price: "₹3,000", icon: Moon, desc: "Theme switching" },
@@ -21,21 +22,6 @@ const addons = [
     { name: "Domain Setup", price: "₹1,000", icon: Globe, desc: "DNS config" },
     { name: "Maintenance", price: "₹2,000/mo", icon: Settings, desc: "Updates & fixes" }
 ];
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-};
 
 export function Addons() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -65,24 +51,25 @@ export function Addons() {
         <section id="addons" className="addons-section">
             <div className="addons-container">
                 <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
                     className="addons-title"
                 >
                     High-Value Add-ons
                 </motion.h3>
                 <motion.div
-                    variants={containerVariants}
+                    variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-50px" }}
                     className="addons-grid"
                 >
                     {displayedAddons.map((addon, index) => (
                         <motion.div
                             key={index}
-                            variants={itemVariants}
+                            variants={scaleUp}
                             className="addon-card group"
                         >
                             <addon.icon className="addon-icon" />

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./FAQ.css";
+import { fadeInUp, staggerContainer } from "../utils/animations";
 
 const faqs = [
     { q: "How long does a build take?", a: "Typically 3-5 days for the standard package, provided all content is ready." },
@@ -16,10 +18,28 @@ export function FAQ() {
     return (
         <section className="faq-section">
             <div className="faq-container">
-                <h2 className="faq-title">Frequently Asked Questions</h2>
-                <div className="faq-list">
+                <motion.h2
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="faq-title"
+                >
+                    Frequently Asked Questions
+                </motion.h2>
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="faq-list"
+                >
                     {faqs.map((faq, index) => (
-                        <div key={index} className="faq-item">
+                        <motion.div
+                            key={index}
+                            variants={fadeInUp}
+                            className="faq-item"
+                        >
                             <button
                                 className="faq-button"
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
@@ -27,14 +47,24 @@ export function FAQ() {
                                 <span className="faq-question">{faq.q}</span>
                                 {openIndex === index ? <Minus className="faq-icon minus" /> : <Plus className="faq-icon plus" />}
                             </button>
-                            {openIndex === index && (
-                                <div className="faq-answer">
-                                    {faq.a}
-                                </div>
-                            )}
-                        </div>
+                            <AnimatePresence>
+                                {openIndex === index && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        style={{ overflow: "hidden" }}
+                                    >
+                                        <div className="faq-answer">
+                                            {faq.a}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

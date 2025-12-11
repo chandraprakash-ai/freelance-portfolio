@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 import "./Contact.css";
+import { slideInLeft, slideInRight } from "../utils/animations";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -95,7 +97,12 @@ export function Contact() {
                 <div className="contact-grid">
 
                     {/* Contact Info */}
-                    <div>
+                    <motion.div
+                        variants={slideInLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
                         <h2 className="contact-title">Let's Build Something Great</h2>
                         <p className="contact-desc">
                             Ready to grow your business? Fill out the form or contact me directly.
@@ -141,10 +148,16 @@ export function Contact() {
                                 <li>• 20% Before final launch</li>
                             </ul>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Form */}
-                    <div className="contact-form-wrapper">
+                    <motion.div
+                        variants={slideInRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="contact-form-wrapper"
+                    >
                         {submitted ? (
                             <div className="success-message">
                                 <div className="success-icon-wrapper">
@@ -277,9 +290,9 @@ export function Contact() {
                                 </button>
                             </form>
                         )}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

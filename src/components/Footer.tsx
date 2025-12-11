@@ -1,10 +1,18 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
 import "./Footer.css";
+import { fadeInUp } from "../utils/animations";
 
 export function Footer() {
     return (
         <footer className="footer">
-            <div className="footer-container">
+            <motion.div
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="footer-container"
+            >
                 <div className="footer-grid">
                     <div className="footer-brand-col">
                         <h2 className="footer-brand-name">Chandraprakash Prajapati</h2>
@@ -41,7 +49,7 @@ export function Footer() {
                     <p>© {new Date().getFullYear()} Chandraprakash Prajapati. All rights reserved.</p>
                     <p>Designed & Built with Vite + React</p>
                 </div>
-            </div>
+            </motion.div>
         </footer>
     );
 }

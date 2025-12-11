@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./Hero.css";
+import { slideInLeft, scaleUp, slideInRight } from "../utils/animations";
 
 export function Hero() {
     const targetRef = useRef<HTMLDivElement>(null);
@@ -11,7 +12,6 @@ export function Hero() {
 
     // Parallax: mockup moves slower than scroll
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-    const opacity = useTransform(scrollYProgress, [0.3, 0.8], [1, 0]);
 
     return (
         <section ref={targetRef} className="hero-section">
@@ -22,9 +22,9 @@ export function Hero() {
                 <div className="hero-grid">
                     {/* Left Column */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        variants={slideInLeft}
+                        initial="hidden"
+                        animate="visible"
                         className="hero-content"
                     >
                         <h1 className="hero-title">
@@ -51,13 +51,13 @@ export function Hero() {
 
                     {/* Right Column - Mockup with Parallax */}
                     <motion.div
-                        style={{ y, opacity }}
+                        style={{ y, willChange: "transform" }}
                         className="hero-mockup-wrapper"
                     >
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 1 }}
-                            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            variants={scaleUp}
+                            initial="hidden"
+                            animate="visible"
                             className="mockup-container"
                         >
                             <img
@@ -70,9 +70,9 @@ export function Hero() {
 
                         {/* Badge */}
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, delay: 0.6 }}
+                            variants={slideInRight}
+                            initial="hidden"
+                            animate="visible"
                             className="premium-badge"
                         >
                             <div className="badge-icon">
@@ -83,9 +83,6 @@ export function Hero() {
                                 <p className="badge-price">₹29,999</p>
                             </div>
                         </motion.div>
-
-                        {/* Decorative blob */}
-                        <div className="decorative-blob" />
                     </motion.div>
                 </div>
             </div>

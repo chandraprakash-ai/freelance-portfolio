@@ -1,5 +1,7 @@
 import { Check, Star } from "lucide-react";
+import { motion } from "framer-motion";
 import "./Pricing.css";
+import { scaleUp, staggerContainer } from "../utils/animations";
 
 export function PremiumPackage() {
     const handleSelect = (packageName: string) => {
@@ -12,7 +14,13 @@ export function PremiumPackage() {
     return (
         <section className="pricing-section">
             <div className="pricing-container">
-                <div className="premium-card">
+                <motion.div
+                    variants={scaleUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="premium-card"
+                >
                     <div className="premium-glow"></div>
 
                     <div className="premium-grid">
@@ -58,7 +66,7 @@ export function PremiumPackage() {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
@@ -75,9 +83,15 @@ export function PricingTable() {
         <section className="pricing-section">
             <div className="pricing-table-container">
                 <h3 className="table-title">Compare Packages</h3>
-                <div className="table-grid">
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="table-grid"
+                >
                     {/* Starter */}
-                    <div className="pricing-card">
+                    <motion.div variants={scaleUp} className="pricing-card">
                         <h4 className="card-title">Starter</h4>
                         <p className="card-price">₹12,000</p>
                         <ul className="card-features">
@@ -87,10 +101,10 @@ export function PricingTable() {
                             <li className="card-feature-item"><Check className="card-check-icon" /> Contact Form</li>
                         </ul>
                         <button onClick={() => handleSelect("Basic Website (₹12,000)")} className="card-button">Choose Starter</button>
-                    </div>
+                    </motion.div>
 
                     {/* Pro */}
-                    <div className="pricing-card pro">
+                    <motion.div variants={scaleUp} className="pricing-card pro">
                         <div className="recommended-badge">Recommended</div>
                         <h4 className="card-title">Pro</h4>
                         <p className="card-price">₹18,000</p>
@@ -101,10 +115,10 @@ export function PricingTable() {
                             <li className="card-feature-item"><Check className="card-check-icon" /> 1 Month Support</li>
                         </ul>
                         <button onClick={() => handleSelect("Standard Website (₹18,000)")} className="card-button primary">Choose Pro</button>
-                    </div>
+                    </motion.div>
 
                     {/* Premium (Small view) */}
-                    <div className="pricing-card">
+                    <motion.div variants={scaleUp} className="pricing-card">
                         <h4 className="card-title">Premium</h4>
                         <p className="card-price">₹29,999</p>
                         <ul className="card-features">
@@ -114,8 +128,8 @@ export function PricingTable() {
                             <li className="card-feature-item"><Check className="card-check-icon" /> 3 Months Support</li>
                         </ul>
                         <button onClick={() => handleSelect("Premium Website (₹29,999)")} className="card-button">Choose Premium</button>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

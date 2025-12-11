@@ -1,6 +1,7 @@
 import { Check, Zap, Layout, Globe, Code, User, Database } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Services.css";
+import { fadeInUp, staggerContainer } from "../utils/animations";
 
 const services = [
     {
@@ -47,21 +48,6 @@ const services = [
     }
 ];
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-};
-
 export function Services() {
     return (
         <section id="services" className="services-section">
@@ -72,15 +58,16 @@ export function Services() {
                 {/* Services Grid */}
                 <div className="services-grid-wrapper">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        variants={fadeInUp}
+                        initial="hidden"
+                        whileInView="visible"
                         viewport={{ once: true }}
                         className="services-title"
                     >
                         Services I Offer
                     </motion.h2>
                     <motion.div
-                        variants={containerVariants}
+                        variants={staggerContainer}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
@@ -89,7 +76,7 @@ export function Services() {
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
-                                variants={itemVariants}
+                                variants={fadeInUp}
                                 className="service-card group"
                             >
                                 <div className="card-decoration"></div>

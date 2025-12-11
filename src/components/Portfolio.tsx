@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, ArrowRight } from "lucide-react";
 import "./Portfolio.css";
 import { SkeletonCard } from "./SkeletonCard";
+import { slideInLeft, slideInRight, popIn, staggerContainer } from "../utils/animations";
 
 const projects = [
     {
@@ -94,67 +96,100 @@ export function Portfolio() {
         <section id="portfolio" className="portfolio-section">
             <div className="container">
                 <div className="header-flex">
-                    <div>
+                    <motion.div
+                        variants={slideInLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
                         <h2 className="portfolio-title">Selected Works</h2>
                         <p className="section-description">
                             A selection of premium websites built for growth-focused businesses.
                         </p>
-                    </div>
-                    <a href="#" className="view-all-link">
+                    </motion.div>
+                    <motion.a
+                        href="#"
+                        className="view-all-link"
+                        variants={slideInRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
                         View all projects <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </motion.a>
                 </div>
 
-                <div className="projects-grid">
-                    {isLoading ? (
-                        // Show skeletons while loading
-                        Array.from({ length: 4 }).map((_, index) => (
-                            <SkeletonCard key={index} />
-                        ))
-                    ) : (
-                        projects.map((project) => (
-                            <div
-                                key={project.id}
-                                className="project-card group"
-                                onClick={() => setSelectedProject(project)}
+                <div>
+                    <AnimatePresence mode="popLayout">
+                        {isLoading ? (
+                            <motion.div
+                                key="loader"
+                                variants={staggerContainer}
+                                initial="hidden"
+                                animate="visible"
+                                exit={{ opacity: 0 }}
+                                className="projects-grid"
                             >
-                                <div className="card-image-container">
-                                    <div className="main-image-mask">
-                                        {/* Main Image */}
-                                        <ProjectImage
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="main-image"
-                                        />
+                                {Array.from({ length: 4 }).map((_, index) => (
+                                    <motion.div key={index} variants={popIn}>
+                                        <SkeletonCard />
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="content"
+                                variants={staggerContainer}
+                                initial="hidden"
+                                animate="visible"
+                                className="projects-grid"
+                            >
+                                {projects.map((project) => (
+                                    <motion.div
+                                        key={project.id}
+                                        variants={popIn}
+                                        className="project-card group"
+                                        onClick={() => setSelectedProject(project)}
+                                    >
+                                        <div className="card-image-container">
+                                            <div className="main-image-mask">
+                                                {/* Main Image */}
+                                                <ProjectImage
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    className="main-image"
+                                                />
 
-                                        <div className="overlay">
-                                            <span className="view-case-study-btn">
-                                                View Case Study
+                                                <div className="overlay">
+                                                    <span className="view-case-study-btn">
+                                                        View Case Study
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            {/* Tilted Alt View Card */}
+                                            <div className="alt-view-card">
+                                                <ProjectImage
+                                                    src={'altImage' in project && project.altImage ? project.altImage : project.image}
+                                                    alt={`${project.title} Alt View`}
+                                                    className="alt-image"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="card-content">
+                                            <div>
+                                                <h3 className="project-title">{project.title}</h3>
+                                                <p className="project-category">{project.category}</p>
+                                            </div>
+                                            <span className="project-result">
+                                                {project.result}
                                             </span>
                                         </div>
-                                    </div>
-
-                                    {/* Tilted Alt View Card */}
-                                    <div className="alt-view-card">
-                                        <ProjectImage
-                                            src={'altImage' in project && project.altImage ? project.altImage : project.image}
-                                            alt={`${project.title} Alt View`}
-                                            className="alt-image"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="card-content">
-                                    <div>
-                                        <h3 className="project-title">{project.title}</h3>
-                                        <p className="project-category">{project.category}</p>
-                                    </div>
-                                    <span className="project-result">
-                                        {project.result}
-                                    </span>
-                                </div>
-                            </div>
-                        ))
-                    )}
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
 
                 <div className="mobile-view-all">

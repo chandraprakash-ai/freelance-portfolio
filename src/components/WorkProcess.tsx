@@ -1,5 +1,7 @@
 import { Search, PenTool, Code, CheckCircle, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
 import "./WorkProcess.css";
+import { fadeInUp, staggerContainer } from "../utils/animations";
 
 const steps = [
     { number: "01", title: "Discovery", desc: "Understanding your business goals.", icon: Search, time: "Phase 1" },
@@ -13,10 +15,28 @@ export function WorkProcess() {
     return (
         <section className="work-process-section">
             <div className="process-container">
-                <h2 className="process-title">How We Work</h2>
-                <div className="process-grid">
+                <motion.h2
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="process-title"
+                >
+                    How We Work
+                </motion.h2>
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="process-grid"
+                >
                     {steps.map((step, index) => (
-                        <div key={index} className="process-card group">
+                        <motion.div
+                            key={index}
+                            variants={fadeInUp}
+                            className="process-card group"
+                        >
                             <div className="step-number">{step.number}</div>
                             <div className="process-icon-wrapper">
                                 <step.icon className="process-icon" />
@@ -24,9 +44,9 @@ export function WorkProcess() {
                             <h3 className="process-step-title">{step.title}</h3>
                             <p className="process-step-desc">{step.desc}</p>
                             <span className="process-step-time">{step.time}</span>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
