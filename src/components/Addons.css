@@ -1,6 +1,6 @@
 /* Addons.css */
 .addons-section {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background-color: var(--bg-section-alt);
     /* Alternating background */
 }
@@ -109,17 +109,6 @@
     color: var(--accent-primary);
 }
 
-/* Responsive Media Queries */
-
-@media (max-width: 1024px) {
-    .addons-section {
-        padding: 4rem 0;
-    }
-
-    .addons-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 @media (max-width: 768px) {
     .addons-section {
