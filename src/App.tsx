@@ -18,14 +18,14 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
-      <Services />
-      <Addons />
-      <ServiceDetails />
-      <PremiumPackage />
       <Portfolio />
+      <Services />
+      <ServiceDetails />
       <WorkProcess />
-      {/* <Testimonials /> */}
+      <PremiumPackage />
       <PricingTable />
+      <Addons />
+      {/* <Testimonials /> */}
       <About />
       <FAQ />
       <Contact />

@@ -63,7 +63,8 @@ export function Contact() {
                     projectType: formData.projectType,
                     message: formData.message,
                     _subject: `New Project Request from ${formData.name}`,
-                    _template: "table"
+                    _template: "table",
+                    _captcha: "false"
                 })
             });
 
