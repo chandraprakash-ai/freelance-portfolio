@@ -61,10 +61,11 @@ export function Hero() {
                             className="mockup-container"
                         >
                             <img
-                                src="/linea-studio.png"
+                                src="/linea-studio.webp"
                                 alt="Arcbyte Portfolio - Premium Web Design Project for Linea Studio"
                                 className="w-full h-full object-cover"
-                                style={{ aspectRatio: '16/9' }}
+                                width="1920"
+                                height="1080"
                                 loading="eager"
                                 fetchPriority="high"
                             />

@@ -1,7 +1,7 @@
 /* Hero.css */
 .hero-section {
     position: relative;
-    padding-top:4rem;
+    padding-top: 4rem;
     /* padding-bottom: 2rem; */
     overflow: hidden;
     min-height: 100vh;
@@ -138,6 +138,7 @@
 .mockup-container img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .mockup-container:hover {
@@ -273,7 +274,7 @@
 
     .hero-title {
         font-size: 3rem;
-    
+
     }
 }
 

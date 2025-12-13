@@ -141,7 +141,7 @@ export function Contact() {
                         </div>
 
                         <div className="payment-terms-box">
-                            <h4 className="payment-title">Payment Terms</h4>
+                            <h3 className="payment-title">Payment Terms</h3>
                             <ul className="payment-list">
                                 <li>• 40% Advance to start</li>
                                 <li>• 40% After design approval</li>

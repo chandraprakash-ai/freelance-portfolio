@@ -14,7 +14,7 @@
 
   /* User Provided Palette */
   --color-charcoal: #0f1724;
-  --color-green: #1f8a4f;
+  --color-green: #15803d;
   --color-beige: #f5f3ef;
   --color-gold: #ab8b21;
 
@@ -76,9 +76,7 @@
   box-sizing: border-box;
 }
 
-html {
-  /* overflow-x: hidden; */
-}
+
 
 body {
   margin: 0;
