@@ -56,7 +56,7 @@ const projects = [
     },
 ];
 
-function ProjectImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
+function ProjectImage({ src, alt, className, sizes }: { src: string; alt: string; className?: string; sizes?: string }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const isMainImage = className?.includes('main-image');
 
@@ -71,7 +71,7 @@ function ProjectImage({ src, alt, className }: { src: string; alt: string; class
             <img
                 src={src}
                 srcSet={srcSet}
-                sizes="(max-width: 768px) 95vw, 50vw"
+                sizes={sizes || "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"}
                 alt={alt}
                 className={`${className}`}
                 style={{
@@ -167,6 +167,7 @@ export function Portfolio() {
                                                     src={project.image}
                                                     alt={`Web Design Project: ${project.title} - ${project.category}`}
                                                     className="main-image"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                                 />
 
                                                 <div className="overlay">
@@ -182,6 +183,7 @@ export function Portfolio() {
                                                     src={'altImage' in project && project.altImage ? project.altImage : project.image}
                                                     alt={`${project.title} Alt View`}
                                                     className="alt-image"
+                                                    sizes="(max-width: 768px) 50vw, 300px"
                                                 />
                                             </div>
                                         </div>
