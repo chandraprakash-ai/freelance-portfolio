@@ -42,18 +42,18 @@ const projects = [
         testimonial: "The insights we get from Nimbus are invaluable. It's clean, fast, and easy to use.",
         client: "Nimish Kate, Product Manager"
     },
-    // {
-    //     id: 4,
-    //     title: "Solar Solutions Inc.",
-    //     category: "Business Website",
-    //     result: "40% more leads",
-    //     image: "/solar-solutions.png",
-    //     altImage: "/solar-solutions-alt.png",
-    //     url: "https://lumosun-energy.vercel.app",
-    //     description: "A complete redesign for a local solar installation company. Focused on trust, clear pricing, and lead capture forms.",
-    //     testimonial: "Chandraprakash transformed our online presence. We got 5 leads in the first week!",
-    //     client: "Rajesh Kumar, CEO"
-    // },
+    {
+        id: 4,
+        title: "The Woodfire Café",
+        category: "Food & Beverage Website",
+        result: "40% more table bookings",
+        image: "/woodfire.png",
+        altImage: "/woodfire-alt.png",
+        url: "https://woodfire.vercel.app",
+        description: "The Woodfire Café needed a modern, clean website that showcased their menu, ambience, and helped customers quickly reserve tables.",
+        testimonial: "Arcbyte transformed our online presence. We got 20 bookings online in the first week!",
+        client: "Rajesh Kumar, Owner"
+    },
 ];
 
 function ProjectImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
@@ -75,6 +75,8 @@ function ProjectImage({ src, alt, className }: { src: string; alt: string; class
                     objectFit: 'cover'
                 }}
                 onLoad={() => setIsLoaded(true)}
+                loading="lazy"
+                decoding="async"
             />
         </div>
     );
@@ -156,7 +158,7 @@ export function Portfolio() {
                                                 {/* Main Image */}
                                                 <ProjectImage
                                                     src={project.image}
-                                                    alt={project.title}
+                                                    alt={`Web Design Project: ${project.title} - ${project.category}`}
                                                     className="main-image"
                                                 />
 

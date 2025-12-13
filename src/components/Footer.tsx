@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Footer.css";
 import { fadeInUp } from "../utils/animations";
@@ -15,14 +15,13 @@ export function Footer() {
             >
                 <div className="footer-grid">
                     <div className="footer-brand-col">
-                        <h2 className="footer-brand-name">Chandraprakash Prajapati</h2>
+                        <h2 className="footer-brand-name">Arcbyte</h2>
                         <p className="footer-brand-desc">
-                            Building premium digital experiences for forward-thinking businesses. Focused on speed, conversion, and trust.
+                            Premium, fast, SEO-ready websites using AI workflows and Next.js. Serving clients in Mumbai, Delhi, Bangalore, Dubai, London, and worldwide.
                         </p>
                         <div className="social-links">
-                            <a href="#" className="social-link"><Github className="social-icon" /></a>
-                            <a href="#" className="social-link"><Linkedin className="social-icon" /></a>
-                            <a href="#" className="social-link"><Twitter className="social-icon" /></a>
+                            <a href="https://github.com/chandraprakash-ai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub"><Github className="social-icon" /></a>
+                            <a href="https://linkedin.com/in/chandraprakash-ai" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn"><Linkedin className="social-icon" /></a>
                         </div>
                     </div>
 
@@ -46,8 +45,8 @@ export function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {new Date().getFullYear()} Chandraprakash Prajapati. All rights reserved.</p>
-                    <p>Designed & Built with Vite + React</p>
+                    <p>© {new Date().getFullYear()} Arcbyte. All rights reserved.</p>
+                    <p>Built with Vite + React + Next.js</p>
                 </div>
             </motion.div>
         </footer>

@@ -60,6 +60,7 @@ export function Addons() {
                     High-Value Add-ons
                 </motion.h3>
                 <motion.div
+                    key={isExpanded ? "expanded" : "collapsed"}
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
@@ -84,7 +85,12 @@ export function Addons() {
                     <div className="view-more-container">
                         <button
                             className="view-more-btn"
-                            onClick={() => setIsExpanded(!isExpanded)}
+                            onClick={() => {
+                                if (isExpanded) {
+                                    document.getElementById('addons')?.scrollIntoView({ behavior: 'smooth' });
+                                }
+                                setIsExpanded(!isExpanded);
+                            }}
                         >
                             {isExpanded ? (
                                 <>Show Less <ChevronUp className="w-4 h-4" /></>

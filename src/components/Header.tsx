@@ -26,12 +26,15 @@ export function Header() {
         <header className={`header ${isScrolled ? "scrolled" : ""}`}>
             <div className="header-container">
                 <a href="/" className="logo-link group">
-                    <h1 className="logo-text">
-                        Chandraprakash
-                    </h1>
-                    <p className="logo-subtext">
-                        Frontend • Product UI • Fast business sites
-                    </p>
+                    <img src="/logo-minimal.svg" alt="Arcbyte Logo" className="logo-image" />
+                    <div className="logo-text-wrapper">
+                        <h1 className="logo-text">
+                            Arcbyte
+                        </h1>
+                        <p className="logo-subtext">
+                            Fast, SEO-Ready Websites
+                        </p>
+                    </div>
                 </a>
 
                 {/* Desktop Nav */}

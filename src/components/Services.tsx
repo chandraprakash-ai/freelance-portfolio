@@ -5,46 +5,46 @@ import { fadeInUp, staggerContainer } from "../utils/animations";
 
 const services = [
     {
-        title: "Premium Landing Page",
-        description: "High-conversion single page website designed to sell your product or service.",
+        title: "Premium Landing Page Design",
+        description: "High-conversion, single-page website designed to sell your product. Includes copywriting, fast loading speeds, and mobile-first design to capture every lead.",
         price: "From ₹15,000",
         icon: Layout,
-        features: ["Conversion Focused", "Smooth Animations", "Mobile Optimized"]
+        features: ["Conversion Focused UI", "Smooth Animations", "Mobile Optimized"]
     },
     {
-        title: "Corporate Website",
-        description: "Professional 4-5 page website for established businesses and agencies.",
+        title: "Corporate Website Development",
+        description: "Professional 4-5 page business website for agencies and companies. Scalable, secure, and SEO-optimized to establish trust. Includes CMS for easy updates.",
         price: "From ₹25,000",
         icon: Globe,
-        features: ["CMS Integration", "About & Team", "Service Pages"]
+        features: ["Next.js & CMS Integration", "About, Team & Services", "SEO Best Practices"]
     },
     {
-        title: "Figma to React/Next.js",
-        description: "Pixel-perfect conversion of your design files into clean, semantic code.",
+        title: "Figma to React/Next.js Code",
+        description: "Expert conversion of Figma/XD designs into pixel-perfect, semantic React/Next.js code. 100% design fidelity with clean, maintainable architecture.",
         price: "From ₹8,000",
         icon: Code,
-        features: ["Pixel Perfect", "Interactive", "Component Based"]
+        features: ["Pixel Perfect Conversion", "Interactive Components", "Clean TypeScript Code"]
     },
     {
-        title: "Performance Tuning",
-        description: "Speed optimization for existing websites to improve Core Web Vitals.",
+        title: "Website Performance Tuning",
+        description: "Speed optimization to improve Core Web Vitals. We optimize images, minify code, and fix layout shifts to ensure < 2s load times for better SEO.",
         price: "From ₹5,000",
         icon: Zap,
-        features: ["90+ Google Score", "Image Optimization", "Code Splitting"]
+        features: ["90+ Google Speed Score", "Image Optimization", "Code Splitting"]
     },
     {
-        title: "Portfolio / Personal",
-        description: "Standout personal website for creatives, freelancers, and consultants.",
+        title: "Portfolio & Personal Websites",
+        description: "Standout portfolio design for creatives and coaches. Showcase work and attract high-ticket clients with a professional online presence.",
         price: "From ₹10,000",
         icon: User,
-        features: ["Showcase Work", "Blog Section", "Contact Form"]
+        features: ["Project Showcase", "Blog Section", "Contact Form"]
     },
     {
         title: "Headless CMS Setup",
-        description: "Easy content management without the bloat of WordPress.",
+        description: "Modern content management with Sanity/Strapi. Manage content easily without WordPress bloat. Secure, scalable, and developer-friendly.",
         price: "From ₹12,000",
         icon: Database,
-        features: ["Sanity/Strapi", "Easy Editing", "Secure"]
+        features: ["Sanity/Strapi Setup", "Easy Editing", "Secure & Scalable"]
     }
 ];
 

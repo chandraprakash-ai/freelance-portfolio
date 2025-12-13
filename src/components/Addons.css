@@ -1,6 +1,6 @@
 /* Addons.css */
 .addons-section {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     background-color: var(--bg-section-alt);
     /* Alternating background */
 }
@@ -18,8 +18,15 @@
     font-family: serif;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+/* ... (lines 25-85 unchanged) ... */
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .addons-grid {

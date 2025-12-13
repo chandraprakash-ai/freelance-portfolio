@@ -1,19 +1,24 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    ViteImageOptimizer({
+      /* pass your config */
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Chandraprakash - Freelance Portfolio',
-        short_name: 'Portfolio',
-        description: 'Premium freelance portfolio showcasing web development services.',
-        theme_color: '#ffffff',
+        name: 'Arcbyte - Web Designer in India',
+        short_name: 'Arcbyte',
+        description: 'Premium, fast, SEO-ready websites using AI workflows and Next.js. Web design services for startups and small businesses.',
+        theme_color: '#0a0a0a',
+        background_color: '#0a0a0a',
         icons: [
           {
             src: 'pwa-192x192.png',

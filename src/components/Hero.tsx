@@ -28,10 +28,10 @@ export function Hero() {
                         className="hero-content"
                     >
                         <h1 className="hero-title">
-                            I build premium 3–4 page websites that turn visitors into <span className="highlight-text">paying customers.</span>
+                            Arcbyte: Premium <span className="highlight-text">Web Design in India</span> for Startups & Creators.
                         </h1>
                         <p className="hero-description">
-                            Front-end specialist. Fast builds. Conversion + trust focused designs for local businesses.
+                            I am a freelance web designer in India specializing in fast, SEO-ready websites using Next.js and AI workflows. I help small businesses, coaches, and startups turn visitors into paying customers with modern, mobile-first designs.
                         </p>
                         <div className="hero-buttons">
                             <a
@@ -62,9 +62,11 @@ export function Hero() {
                         >
                             <img
                                 src="/linea-studio.png"
-                                alt="Linea Studio Project"
+                                alt="Arcbyte Portfolio - Premium Web Design Project for Linea Studio"
                                 className="w-full h-full object-cover"
                                 style={{ aspectRatio: '16/9' }}
+                                loading="eager"
+                                fetchPriority="high"
                             />
                         </motion.div>
 
