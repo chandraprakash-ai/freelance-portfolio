@@ -60,11 +60,18 @@ function ProjectImage({ src, alt, className }: { src: string; alt: string; class
     const [isLoaded, setIsLoaded] = useState(false);
     const isMainImage = className?.includes('main-image');
 
+    // Generate srcSet
+    // We assume the small image has -small suffix before extension
+    const smallSrc = src.replace(/(\.[\w\d]+)$/, '-small$1');
+    const srcSet = `${smallSrc} 800w, ${src} 1920w`;
+
     return (
         <div className={`image-wrapper`} style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
             {!isLoaded && <div className="skeleton-image" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />}
             <img
                 src={src}
+                srcSet={srcSet}
+                sizes="(max-width: 768px) 95vw, 50vw"
                 alt={alt}
                 className={`${className}`}
                 style={{
