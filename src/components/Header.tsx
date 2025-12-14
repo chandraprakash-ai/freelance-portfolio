@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import "./Header.css";
 import { scrollToSection } from "../utils/scroll";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         let ticking = false;
@@ -23,9 +26,28 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-        scrollToSection(e, id);
+    const handleNavClick = async (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+        e.preventDefault();
         setIsMobileMenuOpen(false);
+
+        if (location.pathname !== '/') {
+            await navigate('/');
+            // Small delay to allow page load
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }, 100);
+        } else {
+            scrollToSection(e, id);
+        }
     };
 
     return (
@@ -51,14 +73,8 @@ export function Header() {
                     <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="nav-link">
                         Services
                     </a>
-                    <a
-                        href="https://wa.me/919016460030"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="nav-link"
-                        aria-label="Chat on WhatsApp"
-                    >
-                        <Phone className="w-5 h-5" />
+                    <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-link">
+                        Contact
                     </a>
                     <ThemeToggle />
                     <a

@@ -1,4 +1,5 @@
 import { Github, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Footer.css";
 import { fadeInUp } from "../utils/animations";
@@ -38,8 +39,8 @@ export function Footer() {
                     <div>
                         <h3 className="footer-links-title">Legal</h3>
                         <ul className="footer-links-list">
-                            <li><a href="#" className="footer-link">Privacy Policy</a></li>
-                            <li><a href="#" className="footer-link">Terms of Service</a></li>
+                            <li><Link to="/privacy-policy" className="footer-link">Privacy Policy</Link></li>
+                            <li><Link to="/terms-conditions" className="footer-link">Terms of Service</Link></li>
                         </ul>
                     </div>
                 </div>
