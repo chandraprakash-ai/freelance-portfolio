@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Contact.css";
 import { slideInLeft, slideInRight } from "../utils/animations";
@@ -110,15 +110,7 @@ export function Contact() {
                         </p>
 
                         <div className="contact-info-list">
-                            <div className="contact-info-item">
-                                <div className="info-icon-wrapper">
-                                    <Phone className="info-icon" />
-                                </div>
-                                <div>
-                                    <p className="info-label">Phone / WhatsApp</p>
-                                    <a href="tel:+91 9016460030" className="info-value">+91 90164 60030</a>
-                                </div>
-                            </div>
+
 
                             <div className="contact-info-item">
                                 <div className="info-icon-wrapper">
@@ -233,7 +225,7 @@ export function Contact() {
                                             name="phone"
                                             required
                                             className="form-input"
-                                            placeholder="+91 98765 43210"
+                                            placeholder="+91 98765 XXXXX"
                                             value={formData.phone}
                                             onChange={handleChange}
                                         />
