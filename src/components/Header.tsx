@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import "./Header.css";
+import { scrollToSection } from "../utils/scroll";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,11 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+        scrollToSection(e, id);
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <header className={`header ${isScrolled ? "scrolled" : ""}`}>
             <div className="header-container">
@@ -39,10 +45,10 @@ export function Header() {
 
                 {/* Desktop Nav */}
                 <div className="desktop-nav">
-                    <a href="#portfolio" className="nav-link">
+                    <a href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')} className="nav-link">
                         Portfolio
                     </a>
-                    <a href="#services" className="nav-link">
+                    <a href="#services" onClick={(e) => handleNavClick(e, 'services')} className="nav-link">
                         Services
                     </a>
                     <a
@@ -57,6 +63,7 @@ export function Header() {
                     <ThemeToggle />
                     <a
                         href="#contact"
+                        onClick={(e) => handleNavClick(e, 'contact')}
                         className="quote-btn"
                     >
                         Request Quote
@@ -82,21 +89,21 @@ export function Header() {
                     <a
                         href="#portfolio"
                         className="mobile-nav-link"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={(e) => handleNavClick(e, 'portfolio')}
                     >
                         Portfolio
                     </a>
                     <a
                         href="#services"
                         className="mobile-nav-link"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={(e) => handleNavClick(e, 'services')}
                     >
                         Services
                     </a>
                     <a
                         href="#contact"
                         className="mobile-quote-btn"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={(e) => handleNavClick(e, 'contact')}
                     >
                         Request Quote
                     </a>
