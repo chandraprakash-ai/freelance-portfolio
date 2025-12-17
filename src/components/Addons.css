@@ -117,6 +117,12 @@
 }
 
 
+@media (min-width: 1024px) {
+    .addons-container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .addons-section {
         padding: 3rem 0;

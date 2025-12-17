@@ -1,7 +1,7 @@
-/* Contact.css */
 .contact-section {
     padding: 3rem 0;
     background-color: var(--bg-section-alt);
+    overflow: hidden;
 }
 
 .contact-container {
@@ -266,6 +266,12 @@
 }
 
 /* Responsive Media Queries */
+
+@media (min-width: 1024px) {
+    .contact-container {
+        padding: 0 4rem;
+    }
+}
 
 @media (max-width: 768px) {
     .contact-container {

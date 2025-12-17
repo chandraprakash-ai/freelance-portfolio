@@ -40,6 +40,12 @@
     font-weight: 600;
 }
 
+@media (min-width: 1024px) {
+    .about-container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .about-section {
         padding: 4rem 1rem;

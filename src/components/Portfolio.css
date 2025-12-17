@@ -351,6 +351,12 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .portfolio-section {
         padding: 4rem 0;

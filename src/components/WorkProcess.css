@@ -125,6 +125,12 @@
 
 /* Responsive Media Queries */
 
+@media (min-width: 1024px) {
+    .process-container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .work-process-section {
         padding: 3rem 0;
@@ -154,6 +160,7 @@
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 425px) {
     .work-process-section {
         padding: 2rem 0;

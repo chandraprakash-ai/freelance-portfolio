@@ -235,6 +235,12 @@
 
 /* Responsive Media Queries */
 
+@media (min-width: 1024px) {
+    .hero-container {
+        padding: 4rem 4rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-section {
         padding-top: 9rem;

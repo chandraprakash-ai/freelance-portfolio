@@ -314,6 +314,12 @@
 
 /* Responsive Media Queries */
 
+@media (min-width: 1024px) {
+    .pricing-container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .pricing-section {
         padding: 4rem 0;

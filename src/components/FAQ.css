@@ -80,6 +80,14 @@
 
 /* Responsive Media Queries */
 
+/* Responsive Media Queries */
+
+@media (min-width: 1024px) {
+    .faq-container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .faq-container {
         padding: 0 1rem;

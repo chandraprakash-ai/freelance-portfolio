@@ -83,6 +83,12 @@
 
 /* Responsive Media Queries */
 
+@media (min-width: 1024px) {
+    .testimonials-container {
+        padding: 0 4rem;
+    }
+}
+
 @media (max-width: 768px) {
     .testimonials-container {
         padding: 0 1rem;
@@ -97,6 +103,7 @@
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 425px) {
     .testimonials-section {
         padding: 2rem 0;
