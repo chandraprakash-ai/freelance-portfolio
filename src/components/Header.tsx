@@ -54,7 +54,7 @@ export function Header() {
         <header className={`header ${isScrolled ? "scrolled" : ""}`}>
             <div className="header-container">
                 <a href="/" className="logo-link group">
-                    <img src="/logo-minimal.svg" alt="Arcbyte Logo" className="logo-image" />
+                    <img src="/logo.png" alt="Arcbyte Logo" className="logo-image" />
                     <div className="logo-text-wrapper">
                         <h1 className="logo-text">
                             Arcbyte

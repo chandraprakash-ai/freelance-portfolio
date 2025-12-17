@@ -12,7 +12,7 @@ export default defineConfig({
     }),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+      includeAssets: ['logo.png'],
       manifest: {
         name: 'Arcbyte - Web Designer in India',
         short_name: 'Arcbyte',

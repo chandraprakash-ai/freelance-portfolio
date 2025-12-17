@@ -1,7 +1,8 @@
 /* Testimonials.css */
 .testimonials-section {
     padding: 3rem 0;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
+    overflow: hidden;
 }
 
 .testimonials-container {
