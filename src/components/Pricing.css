@@ -2,7 +2,7 @@
 .pricing-section {
     padding: 4rem 0;
     padding-bottom: 3rem;
-    
+
     background-color: var(--bg-tertiary);
     overflow: hidden;
 }
@@ -258,7 +258,22 @@
     /* 3xl */
     font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
     margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-tertiary);
+    font-size: 0.9375rem;
+    opacity: 0.8;
 }
 
 .card-features {
