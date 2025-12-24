@@ -10,11 +10,72 @@
     background-color: var(--bg-secondary);
 }
 
-.hero-bg-gradient {
+.hero-bg-container {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right, var(--bg-secondary), var(--bg-primary), var(--bg-secondary));
-    z-index: -10;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-blob-teal {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 40%;
+    height: 40%;
+    background-color: rgba(13, 148, 136, 0.3);
+    filter: blur(120px);
+    border-radius: 9999px;
+    animation: float-teal 20s infinite ease-in-out;
+}
+
+.hero-blob-gold {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background-color: rgba(255, 199, 13, 0.201);
+    filter: blur(120px);
+    border-radius: 9999px;
+    animation: float-gold 25s infinite ease-in-out reverse;
+}
+
+@keyframes float-teal {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(50px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-30px, 40px) scale(0.95);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes float-gold {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-40px, 50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(30px, -40px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 .hero-container {

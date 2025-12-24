@@ -16,7 +16,11 @@ export function Hero() {
     return (
         <section ref={targetRef} className="hero-section">
             {/* Subtle background gradient */}
-            <div className="hero-bg-gradient" />
+            {/* Subtle background blobs */}
+            <div className="hero-bg-container">
+                <div className="hero-blob-teal" />
+                <div className="hero-blob-gold" />
+            </div>
 
             <div className="hero-container">
                 <div className="hero-grid">

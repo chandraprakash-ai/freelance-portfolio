@@ -129,19 +129,36 @@
     object-fit: cover;
 }
 
+
 .overlay {
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 20;
+    pointer-events: none;
+    /* Let clicks pass through bg if needed, though card click handles it */
 }
 
 .project-card:hover .overlay {
+    opacity: 1;
+}
+
+.floating-action-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    /* Container passes clicks */
+}
+
+.project-card:hover .floating-action-btn {
     opacity: 1;
 }
 
@@ -152,6 +169,8 @@
     padding: 0.5rem 1rem;
     border-radius: 9999px;
     backdrop-filter: blur(4px);
+    pointer-events: auto;
+    /* Button catches clicks if separate, but here whole card clicks so it's visual */
 }
 
 .card-content {
@@ -162,12 +181,29 @@
     z-index: 40;
 }
 
+.card-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+}
+
 .project-title {
     font-size: 1.25rem;
     /* xl */
     font-weight: 700;
     transition: color 0.3s;
     margin-bottom: 0;
+    margin-top: 0;
+    line-height: 1.2;
 }
 
 .project-card:hover .project-title {
@@ -189,6 +225,28 @@
     color: var(--accent-primary);
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
+    margin: 0;
+}
+
+.card-live-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--accent-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s;
+    border: none;
+}
+
+.card-live-link:hover {
+    background-color: var(--accent-hover);
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Modal Styles */

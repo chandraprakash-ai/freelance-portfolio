@@ -170,11 +170,7 @@ export function Portfolio() {
                                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                                 />
 
-                                                <div className="overlay">
-                                                    <span className="view-case-study-btn">
-                                                        View Case Study
-                                                    </span>
-                                                </div>
+                                                <div className="overlay" />
                                             </div>
 
                                             {/* Tilted Alt View Card */}
@@ -186,15 +182,33 @@ export function Portfolio() {
                                                     sizes="(max-width: 768px) 50vw, 300px"
                                                 />
                                             </div>
+
+                                            {/* Floating Button Layer */}
+                                            <div className="floating-action-btn">
+                                                <span className="view-case-study-btn">
+                                                    View Case Study
+                                                </span>
+                                            </div>
                                         </div>
                                         <div className="card-content">
-                                            <div>
+                                            <div className="card-text-content">
+                                                <span className="project-result">
+                                                    {project.result}
+                                                </span>
                                                 <h3 className="project-title">{project.title}</h3>
                                                 <p className="project-category">{project.category}</p>
                                             </div>
-                                            <span className="project-result">
-                                                {project.result}
-                                            </span>
+                                            <div className="card-actions">
+                                                <a
+                                                    href={project.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="card-live-link"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                >
+                                                    View Live <ArrowRight className="w-3 h-3" />
+                                                </a>
+                                            </div>
                                         </div>
                                     </motion.div>
                                 ))}
