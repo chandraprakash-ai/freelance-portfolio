@@ -25,7 +25,7 @@ export function ServiceDetails() {
                     <Clock className="w-6 h-6" />
                 </div>
                 <div>
-                    <p className="value-title">3–4 Day Build</p>
+                    <p className="value-title">5-6 Day Build</p>
                     <p className="value-subtitle">Fast turnaround time</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@ export function ServiceDetails() {
                     <Shield className="w-6 h-6" />
                 </div>
                 <div>
-                    <p className="value-title">3 Months Support</p>
+                    <p className="value-title">1 Months Support</p>
                     <p className="value-subtitle">Included with every build</p>
                 </div>
             </div>

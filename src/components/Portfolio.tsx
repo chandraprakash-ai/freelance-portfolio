@@ -28,7 +28,7 @@ const projects = [
         url: "https://retro-cafe-amd.vercel.app",
         description: "A retro-themed website capturing the unique ambience of the cafe in Ahmedabad. Focuses on visual storytelling.",
         testimonial: "Captures our vibe perfectly.",
-        client: "Retro Cafe Owner"
+        client: "Raj Roy, Manager"
     },
     // {
     //     id: 3,
@@ -42,18 +42,20 @@ const projects = [
     //     testimonial: "A massive upgrade for our online presence.",
     //     client: "Naram Garam Team"
     // },
+
     {
         id: 4,
-        title: "AuraForge",
-        category: "Productivity App",
-        result: "Gamified Tasks",
-        image: "/aura-forge.webp",
-        altImage: "/aura-forge-alt.webp",
-        url: "https://aura-forge.vercel.app",
-        description: "A gamified productivity platform that turns real-life tasks into quests. Features include XP tracking, leveling up, and a dungeon-crawler aesthetic to make productivity fun.",
-        testimonial: "Finally, a to-do list that I actually want to use. It makes work feel like a game.",
-        client: "Krushal Chabadiya, Indie Developer"
+        title: "The Woodfire Café",
+        category: "Food & Beverage Website",
+        result: "40% more table bookings",
+        image: "/woodfire.webp",
+        altImage: "/woodfire-alt.webp",
+        url: "https://woodfire.vercel.app",
+        description: "The Woodfire Café needed a modern, clean website that showcased their menu, ambience, and helped customers quickly reserve tables.",
+        testimonial: "Arcbyte transformed our online presence. We got 20 bookings online in the first week!",
+        client: "George Noman, Owner"
     },
+
     {
         id: 5,
         title: "Linea Studio",
@@ -64,8 +66,9 @@ const projects = [
         url: "https://linea-studios.vercel.app",
         description: "A clean, minimalist portfolio for an architecture firm. The design focuses on negative space and typography to let the architectural work speak for itself.",
         testimonial: "The site perfectly captures our design philosophy. Simple, elegant, and timeless.",
-        client: "Het Kapadiya, Principal Architect"
+        client: "Ron nikolas, Principal Architect"
     },
+
     {
         id: 6,
         title: "Nimbus Metrics",
@@ -78,18 +81,19 @@ const projects = [
         testimonial: "The insights we get from Nimbus are invaluable. It's clean, fast, and easy to use.",
         client: "Nimish Kate, Product Manager"
     },
+
     {
         id: 7,
-        title: "The Woodfire Café",
-        category: "Food & Beverage Website",
-        result: "40% more table bookings",
-        image: "/woodfire.webp",
-        altImage: "/woodfire-alt.webp",
-        url: "https://woodfire.vercel.app",
-        description: "The Woodfire Café needed a modern, clean website that showcased their menu, ambience, and helped customers quickly reserve tables.",
-        testimonial: "Arcbyte transformed our online presence. We got 20 bookings online in the first week!",
-        client: "Rajesh Kumar, Owner"
-    }
+        title: "AuraForge",
+        category: "Productivity App",
+        result: "Gamified Tasks",
+        image: "/aura-forge.webp",
+        altImage: "/aura-forge-alt.webp",
+        url: "https://aura-forge.vercel.app",
+        description: "A gamified productivity platform that turns real-life tasks into quests. Features include XP tracking, leveling up, and a dungeon-crawler aesthetic to make productivity fun.",
+        testimonial: "Finally, a to-do list that I actually want to use. It makes work feel like a game.",
+        client: "Krushal Chabadiya, Indie Developer"
+    },
 ];
 
 function ProjectImage({ src, alt, className, sizes }: { src: string; alt: string; className?: string; sizes?: string }) {
