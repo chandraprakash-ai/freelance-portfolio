@@ -2,6 +2,7 @@ import { Check, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import "./Pricing.css";
 import { scaleUp, staggerContainer } from "../utils/animations";
+import { PRICING_PLANS } from "../data/pricing";
 
 export function PremiumPackage() {
     const handleSelect = (packageName: string) => {
@@ -28,16 +29,16 @@ export function PremiumPackage() {
                             <div className="popular-badge">
                                 <Star className="popular-icon" /> Most Popular
                             </div>
-                            <h2 className="premium-title">Authority Website</h2>
+                            <h2 className="premium-title">{PRICING_PLANS.authority.name}</h2>
                             <p className="premium-desc">
-                                For brands that want to dominate their local market. Includes everything you need to launch and grow.
+                                {PRICING_PLANS.authority.description}
                             </p>
                             <div className="price-wrapper">
-                                <span className="price-amount">₹29,999</span>
+                                <span className="price-amount">{PRICING_PLANS.authority.price}</span>
                                 <span className="price-period">/ one-time</span>
                             </div>
                             <button
-                                onClick={() => handleSelect("Authority Website (₹29,999)")}
+                                onClick={() => handleSelect(`${PRICING_PLANS.authority.name} (${PRICING_PLANS.authority.price})`)}
                                 className="cta-button"
                             >
                                 Get Started Now
@@ -47,14 +48,7 @@ export function PremiumPackage() {
                         <div className="features-box">
                             <h3 className="features-title">What's Included:</h3>
                             <ul className="features-list">
-                                {[
-                                    "5-Page Premium Website",
-                                    "Custom Design System (Logo, Colors)",
-                                    "Advanced SEO Setup + Schema",
-                                    "Lead Capture Forms + WhatsApp",
-                                    "CMS for Easy Edits",
-                                    "3 Months Priority Support"
-                                ].map((item, i) => (
+                                {PRICING_PLANS.authority.features.map((item, i) => (
                                     <li key={i} className="feature-item">
                                         <div className="check-circle">
                                             <Check className="check-icon" />
@@ -81,7 +75,7 @@ export function PricingTable() {
     return (
         <section className="pricing-section">
             <div className="pricing-table-container">
-                <h3 className="table-title">Compare Packages</h3>
+                <h2 className="table-title">Compare Packages</h2>
                 <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -89,47 +83,44 @@ export function PricingTable() {
                     viewport={{ once: true }}
                     className="table-grid"
                 >
-                    {/* Basic Business Website */}
+                    {/* Starter */}
                     <motion.div variants={scaleUp} className="pricing-card">
-                        <h4 className="card-title">Basic Business Website</h4>
-                        <p className="card-price">₹12,000</p>
-                        <p className="card-desc">For small businesses getting online for the first time</p>
+                        <h4 className="card-title">{PRICING_PLANS.starter.name}</h4>
+                        <p className="card-price">{PRICING_PLANS.starter.price}</p>
+                        <p className="card-desc">{PRICING_PLANS.starter.description}</p>
                         <ul className="card-features">
-                            <li className="card-feature-item"><Check className="card-check-icon" /> 3 Pages</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> Mobile Responsive</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> Basic SEO</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> Contact Form</li>
+                            {PRICING_PLANS.starter.features.map((feature, i) => (
+                                <li key={i} className="card-feature-item"><Check className="card-check-icon" /> {feature}</li>
+                            ))}
                         </ul>
-                        <button onClick={() => handleSelect("Basic Business Website (₹12,000)")} className="card-button">Choose Basic</button>
+                        <button onClick={() => handleSelect(`${PRICING_PLANS.starter.name} (${PRICING_PLANS.starter.price})`)} className="card-button">Choose {PRICING_PLANS.starter.name}</button>
                     </motion.div>
 
-                    {/* Growth Website */}
+                    {/* Growth */}
                     <motion.div variants={scaleUp} className="pricing-card pro">
                         <div className="recommended-badge">Recommended</div>
-                        <h4 className="card-title">Growth Website</h4>
-                        <p className="card-price">₹18,000</p>
-                        <p className="card-desc">For businesses that want leads and trust</p>
+                        <h4 className="card-title">{PRICING_PLANS.growth.name}</h4>
+                        <p className="card-price">{PRICING_PLANS.growth.price}</p>
+                        <p className="card-desc">{PRICING_PLANS.growth.description}</p>
                         <ul className="card-features">
-                            <li className="card-feature-item"><Check className="card-check-icon" /> 4 Pages</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> Portfolio / Gallery</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> WhatsApp Integration</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> 1 Month Support</li>
+                            {PRICING_PLANS.growth.features.map((feature, i) => (
+                                <li key={i} className="card-feature-item"><Check className="card-check-icon" /> {feature}</li>
+                            ))}
                         </ul>
-                        <button onClick={() => handleSelect("Growth Website (₹18,000)")} className="card-button primary">Choose Growth</button>
+                        <button onClick={() => handleSelect(`${PRICING_PLANS.growth.name} (${PRICING_PLANS.growth.price})`)} className="card-button primary">Choose {PRICING_PLANS.growth.name}</button>
                     </motion.div>
 
-                    {/* Authority Website */}
+                    {/* Authority */}
                     <motion.div variants={scaleUp} className="pricing-card">
-                        <h4 className="card-title">Authority Website</h4>
-                        <p className="card-price">₹29,999</p>
-                        <p className="card-desc">For brands that want to dominate their local market</p>
+                        <h4 className="card-title">{PRICING_PLANS.authority.name}</h4>
+                        <p className="card-price">{PRICING_PLANS.authority.price}</p>
+                        <p className="card-desc">{PRICING_PLANS.authority.description}</p>
                         <ul className="card-features">
-                            <li className="card-feature-item"><Check className="card-check-icon" /> 5+ Pages</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> Full Design System</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> Advanced SEO & CRM</li>
-                            <li className="card-feature-item"><Check className="card-check-icon" /> 3 Months Support</li>
+                            {PRICING_PLANS.authority.features.map((feature, i) => (
+                                <li key={i} className="card-feature-item"><Check className="card-check-icon" /> {feature}</li>
+                            ))}
                         </ul>
-                        <button onClick={() => handleSelect("Authority Website (₹29,999)")} className="card-button">Choose Authority</button>
+                        <button onClick={() => handleSelect(`${PRICING_PLANS.authority.name} (${PRICING_PLANS.authority.price})`)} className="card-button">Choose {PRICING_PLANS.authority.name}</button>
                     </motion.div>
                 </motion.div>
                 <div className="pricing-note">

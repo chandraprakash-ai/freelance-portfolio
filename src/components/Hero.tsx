@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./Hero.css";
 import { slideInLeft, scaleUp, slideInRight } from "../utils/animations";
+import { PRICING_PLANS } from "../data/pricing";
 
 export function Hero() {
     const targetRef = useRef<HTMLDivElement>(null);
@@ -87,7 +88,7 @@ export function Hero() {
                             </div>
                             <div>
                                 <p className="badge-label">Premium Package</p>
-                                <p className="badge-price">₹29,999</p>
+                                <p className="badge-price">{PRICING_PLANS.authority.price}</p>
                             </div>
                         </motion.div>
                     </motion.div>

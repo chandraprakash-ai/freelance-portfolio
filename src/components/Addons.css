@@ -31,7 +31,7 @@
 
 .addons-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -51,8 +51,8 @@
 }
 
 .addon-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     color: var(--text-tertiary);
     margin: 0 auto 0.75rem auto;
     display: block;
@@ -69,25 +69,17 @@
     color: var(--text-primary);
     font-size: 0.875rem;
     /* sm */
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
     text-align: center;
 }
 
-.addon-desc {
+.enhancements-note {
+    text-align: center;
     color: var(--text-tertiary);
-    font-size: 0.75rem;
-    /* xs */
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.addon-price {
-    color: var(--accent-primary);
-    font-size: 0.75rem;
-    /* xs */
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
+    font-size: 0.875rem;
+    margin-top: 2rem;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 .view-more-container {

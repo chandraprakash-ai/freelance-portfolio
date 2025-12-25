@@ -170,6 +170,7 @@
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .form-grid {

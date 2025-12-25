@@ -47,7 +47,6 @@ export function Footer() {
 
                 <div className="footer-bottom">
                     <p>© {new Date().getFullYear()} Arcbyte. All rights reserved.</p>
-                    <p>Built with Vite + React + Next.js</p>
                 </div>
             </motion.div>
         </footer>

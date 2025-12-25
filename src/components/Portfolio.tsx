@@ -8,6 +8,42 @@ import { slideInLeft, slideInRight, popIn, staggerContainer } from "../utils/ani
 const projects = [
     {
         id: 1,
+        title: "Prasadam",
+        category: "F&B / Cafe",
+        result: "Online Menu & Orders",
+        image: "/prasadam-hero.webp",
+        altImage: "/prasadam-menu.webp",
+        url: "https://prasadam-cafe.vercel.app",
+        description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
+        testimonial: "The functionality is perfect for our daily operations.",
+        client: "Prasadam Management"
+    },
+    {
+        id: 2,
+        title: "Retro Cafe AMD",
+        category: "Cafe & Lounge",
+        result: "Brand Identity",
+        image: "/retro-cafe-hero.webp",
+        altImage: "/retro-cafe-menu.webp",
+        url: "https://retro-cafe-amd.vercel.app",
+        description: "A retro-themed website capturing the unique ambience of the cafe in Ahmedabad. Focuses on visual storytelling.",
+        testimonial: "Captures our vibe perfectly.",
+        client: "Retro Cafe Owner"
+    },
+    // {
+    //     id: 3,
+    //     title: "Naram Garam",
+    //     category: "Brand Website",
+    //     result: "Direct Sales Growth",
+    //     image: "/aura-forge.webp",
+    //     altImage: "/aura-forge-alt.webp",
+    //     url: "https://naramgaram.vercel.app",
+    //     description: "A vibrant digital platform for Naram Garam, focusing on customer engagement and brand loyalty.",
+    //     testimonial: "A massive upgrade for our online presence.",
+    //     client: "Naram Garam Team"
+    // },
+    {
+        id: 4,
         title: "AuraForge",
         category: "Productivity App",
         result: "Gamified Tasks",
@@ -19,7 +55,7 @@ const projects = [
         client: "Krushal Chabadiya, Indie Developer"
     },
     {
-        id: 2,
+        id: 5,
         title: "Linea Studio",
         category: "Architecture Portfolio",
         result: "Minimalist Design",
@@ -31,7 +67,7 @@ const projects = [
         client: "Het Kapadiya, Principal Architect"
     },
     {
-        id: 3,
+        id: 6,
         title: "Nimbus Metrics",
         category: "Analytics Dashboard",
         result: "Real-time Insights",
@@ -43,7 +79,7 @@ const projects = [
         client: "Nimish Kate, Product Manager"
     },
     {
-        id: 4,
+        id: 7,
         title: "The Woodfire Café",
         category: "Food & Beverage Website",
         result: "40% more table bookings",
@@ -53,7 +89,7 @@ const projects = [
         description: "The Woodfire Café needed a modern, clean website that showcased their menu, ambience, and helped customers quickly reserve tables.",
         testimonial: "Arcbyte transformed our online presence. We got 20 bookings online in the first week!",
         client: "Rajesh Kumar, Owner"
-    },
+    }
 ];
 
 function ProjectImage({ src, alt, className, sizes }: { src: string; alt: string; className?: string; sizes?: string }) {
@@ -153,7 +189,7 @@ export function Portfolio() {
                                 animate="visible"
                                 className="projects-grid"
                             >
-                                {projects.map((project) => (
+                                {projects.slice(0, 4).map((project) => (
                                     <motion.div
                                         key={project.id}
                                         variants={popIn}
