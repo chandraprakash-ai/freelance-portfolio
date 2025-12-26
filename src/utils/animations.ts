@@ -37,13 +37,13 @@ export const slideInRight: Variants = {
 };
 
 export const scaleUp: Variants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.85 },
     visible: {
         opacity: 1,
         scale: 1,
         transition: {
             duration: 0.8,
-            ease: [0.22, 1, 0.36, 1]
+            ease:"easeInOut"
         }
     }
 };

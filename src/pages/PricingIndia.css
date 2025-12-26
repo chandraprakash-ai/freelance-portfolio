@@ -94,7 +94,7 @@
     padding: 1.5rem;
     border-radius: 0.75rem;
     border: 1px solid var(--border-color);
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
 }
 
 .india-service-card:hover {
@@ -141,7 +141,7 @@
     padding: 2rem;
     text-align: center;
     position: relative;
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
 }
 
 .india-package-card:hover {
@@ -226,7 +226,7 @@
     font-weight: 600;
     font-size: 0.9375rem;
     text-decoration: none;
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
     cursor: pointer;
     border: 1px solid var(--text-primary);
     background: transparent;
@@ -269,7 +269,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
 }
 
 .india-addon-card:hover {
@@ -376,7 +376,7 @@
     border-radius: 0.5rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
 }
 
 .pricing-india-footer .contact-cta:hover {
