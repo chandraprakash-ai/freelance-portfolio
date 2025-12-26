@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /pricing-india
 
 # Sitemap
 Sitemap: https://arcbyte.vercel.app/sitemap.xml
-

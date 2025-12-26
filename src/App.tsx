@@ -5,6 +5,7 @@ import { Home } from './pages/Home'
 import { PrivacyPolicy } from './pages/PrivacyPolicy'
 import { TermsConditions } from './pages/TermsConditions'
 import { PricingIndia } from './pages/PricingIndia'
+import { Projects } from './pages/Projects'
 import './App.css'
 import { ScrollToTop } from './components/ScrollToTop'
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/pricing-india" element={<PricingIndia />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
       </div>

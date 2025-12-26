@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Portfolio.css";
 import { SkeletonCard } from "./SkeletonCard";
 import { slideInLeft, slideInRight, popIn, staggerContainer } from "../utils/animations";
@@ -156,16 +157,17 @@ export function Portfolio() {
                             A selection of premium websites built for growth-focused businesses.
                         </p>
                     </motion.div>
-                    <motion.a
-                        href="#"
-                        className="view-all-link"
-                        variants={slideInRight}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                    >
-                        View all projects <ArrowRight className="w-4 h-4" />
-                    </motion.a>
+                    <Link to="/projects" className="view-all-link">
+                        <motion.span
+                            variants={slideInRight}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                        >
+                            View all projects <ArrowRight className="w-4 h-4" />
+                        </motion.span>
+                    </Link>
                 </div>
 
                 <div>
@@ -258,9 +260,9 @@ export function Portfolio() {
                 </div>
 
                 <div className="mobile-view-all">
-                    <a href="#" className="mobile-view-all-link">
+                    <Link to="/projects" className="mobile-view-all-link">
                         View all projects <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Modal */}

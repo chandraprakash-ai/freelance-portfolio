@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import "./PricingIndia.css";
 import { fadeInUp, staggerContainer, scaleUp } from "../utils/animations";
@@ -83,6 +84,32 @@ const processSteps = [
 ];
 
 export function PricingIndia() {
+    // Set noindex for this hidden page
+    useEffect(() => {
+        document.title = "Pricing for India | Arcbyte";
+
+        // Add noindex meta tag to prevent search engine indexing
+        let robotsMeta = document.querySelector('meta[name="robots"]');
+        const originalContent = robotsMeta?.getAttribute('content') || '';
+
+        if (robotsMeta) {
+            robotsMeta.setAttribute('content', 'noindex, nofollow');
+        } else {
+            robotsMeta = document.createElement('meta');
+            robotsMeta.setAttribute('name', 'robots');
+            robotsMeta.setAttribute('content', 'noindex, nofollow');
+            document.head.appendChild(robotsMeta);
+        }
+
+        // Cleanup: restore original meta on unmount
+        return () => {
+            document.title = "Arcbyte | Web Designer in India | Fast, SEO-Ready Websites";
+            if (robotsMeta) {
+                robotsMeta.setAttribute('content', originalContent || 'index, follow');
+            }
+        };
+    }, []);
+
     const handlePackageSelect = (packageName: string) => {
         const event = new CustomEvent('packageSelected', { detail: packageName });
         window.dispatchEvent(event);
