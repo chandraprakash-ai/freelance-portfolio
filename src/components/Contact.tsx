@@ -184,7 +184,7 @@ export function Contact() {
                                             name="name"
                                             required
                                             className="form-input"
-                                            placeholder="John Doe"
+                                            placeholder="Your Name"
                                             value={formData.name}
                                             onChange={handleChange}
                                         />

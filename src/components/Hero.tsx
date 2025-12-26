@@ -36,7 +36,7 @@ export function Hero() {
                             Arcbyte: Premium <span className="highlight-text">Web Designs</span> for Startups & Creators.
                         </h1>
                         <p className="hero-description">
-                            I am a freelance web designer in India specializing in fast, SEO-ready websites using Next.js and AI workflows. I help small businesses, coaches, and startups turn visitors into paying customers with modern, mobile-first designs.
+                            I am a freelance web designer in specializing in fast, SEO-ready websites using Next.js and AI workflows. I help small businesses, coaches, and startups turn visitors into paying customers with modern, mobile-first designs.
                         </p>
                         <div className="hero-buttons">
                             <a
