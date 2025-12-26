@@ -7,18 +7,18 @@ import { SkeletonCard } from "./SkeletonCard";
 import { slideInLeft, slideInRight, popIn, staggerContainer } from "../utils/animations";
 
 const projects = [
-    {
-        id: 1,
-        title: "Prasadam",
-        category: "F&B / Cafe",
-        result: "Online Menu & Orders",
-        image: "/prasadam-hero.webp",
-        altImage: "/prasadam-menu.webp",
-        url: "https://prasadam-cafe.vercel.app",
-        description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
-        testimonial: "The functionality is perfect for our daily operations.",
-        client: "Prasadam Management"
-    },
+    //{
+       // id: 1,
+        //title: "Prasadam",
+       // category: "F&B / Cafe",
+        //result: "Online Menu & Orders",
+       // image: "/prasadam-hero.webp",
+      //altImage: "/prasadam-menu.webp",
+      //  url: "https://prasadam-cafe.vercel.app",
+       // description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
+       // testimonial: "The functionality is perfect for our daily operations.",
+       // client: "Prasadam Management"
+  //  },
     {
         id: 2,
         title: "Retro Cafe AMD",
