@@ -13,7 +13,7 @@ export function Contact() {
         company: "",
         email: "",
         phone: "",
-        projectType: "Premium Website (₹29,999)",
+        projectType: "Authority Package",
         message: "",
         terms: false
     });
@@ -78,7 +78,7 @@ export function Contact() {
                     company: "",
                     email: "",
                     phone: "",
-                    projectType: "Premium Website (₹29,999)",
+                    projectType: "Authority Package",
                     message: "",
                     terms: false
                 });
@@ -241,9 +241,9 @@ export function Contact() {
                                         value={formData.projectType}
                                         onChange={handleChange}
                                     >
-                                        <option>Premium Website (₹29,999)</option>
-                                        <option>Standard Website (₹18,000)</option>
-                                        <option>Basic Website (₹12,000)</option>
+                                        <option>Authority Package</option>
+                                        <option>Growth Package</option>
+                                        <option>Starter Package</option>
                                         <option>Custom Requirement</option>
                                     </select>
                                 </div>

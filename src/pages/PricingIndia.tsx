@@ -183,7 +183,7 @@ export function PricingIndia() {
                                 </ul>
                                 <button
                                     className="india-package-cta"
-                                    onClick={() => handlePackageSelect(`${pkg.name} (${pkg.price})`)}
+                                    onClick={() => handlePackageSelect(`${pkg.name} Package`)}
                                 >
                                     Choose {pkg.name}
                                 </button>

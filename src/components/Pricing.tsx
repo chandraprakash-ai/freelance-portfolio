@@ -38,7 +38,7 @@ export function PremiumPackage() {
                                 <span className="price-period">/ one-time</span>
                             </div>
                             <button
-                                onClick={() => handleSelect(`${PRICING_PLANS.authority.name} (${PRICING_PLANS.authority.price})`)}
+                                onClick={() => handleSelect(`${PRICING_PLANS.authority.name} Package`)}
                                 className="cta-button"
                             >
                                 Get Started Now
@@ -93,7 +93,7 @@ export function PricingTable() {
                                 <li key={i} className="card-feature-item"><Check className="card-check-icon" /> {feature}</li>
                             ))}
                         </ul>
-                        <button onClick={() => handleSelect(`${PRICING_PLANS.starter.name} (${PRICING_PLANS.starter.price})`)} className="card-button">Choose {PRICING_PLANS.starter.name}</button>
+                        <button onClick={() => handleSelect(`${PRICING_PLANS.starter.name} Package`)} className="card-button">Choose {PRICING_PLANS.starter.name}</button>
                     </motion.div>
 
                     {/* Growth */}
@@ -107,7 +107,7 @@ export function PricingTable() {
                                 <li key={i} className="card-feature-item"><Check className="card-check-icon" /> {feature}</li>
                             ))}
                         </ul>
-                        <button onClick={() => handleSelect(`${PRICING_PLANS.growth.name} (${PRICING_PLANS.growth.price})`)} className="card-button primary">Choose {PRICING_PLANS.growth.name}</button>
+                        <button onClick={() => handleSelect(`${PRICING_PLANS.growth.name} Package`)} className="card-button primary">Choose {PRICING_PLANS.growth.name}</button>
                     </motion.div>
 
                     {/* Authority */}
@@ -120,7 +120,7 @@ export function PricingTable() {
                                 <li key={i} className="card-feature-item"><Check className="card-check-icon" /> {feature}</li>
                             ))}
                         </ul>
-                        <button onClick={() => handleSelect(`${PRICING_PLANS.authority.name} (${PRICING_PLANS.authority.price})`)} className="card-button">Choose {PRICING_PLANS.authority.name}</button>
+                        <button onClick={() => handleSelect(`${PRICING_PLANS.authority.name} Package`)} className="card-button">Choose {PRICING_PLANS.authority.name}</button>
                     </motion.div>
                 </motion.div>
                 <div className="pricing-note">
