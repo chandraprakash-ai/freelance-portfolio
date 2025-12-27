@@ -7,17 +7,29 @@ import { SkeletonCard } from "./SkeletonCard";
 import { slideInLeft, slideInRight, popIn, staggerContainer } from "../utils/animations";
 
 const projects = [
+    // {
+    //     id: 1,
+    //     title: "Prasadam",
+    //     category: "F&B / Cafe",
+    //     result: "Online Menu & Orders",
+    //     image: "/prasadam-hero.webp",
+    //     altImage: "/prasadam-menu.webp",
+    //     url: "https://prasadam-cafe.vercel.app",
+    //     description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
+    //     testimonial: "The functionality is perfect for our daily operations.",
+    //     client: "Prasadam Management"
+    // },
     {
-        id: 1,
-        title: "Prasadam",
-        category: "F&B / Cafe",
-        result: "Online Menu & Orders",
-        image: "/prasadam-hero.webp",
-        altImage: "/prasadam-menu.webp",
-        url: "https://prasadam-cafe.vercel.app",
-        description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
-        testimonial: "The functionality is perfect for our daily operations.",
-        client: "Prasadam Management"
+        id: 8,
+        title: "Lumosun Energy",
+        category: "Solar Energy Website",
+        result: "Brand Authority",
+        image: "/lumosun-hero.webp",
+        altImage: "/lumosun-alt.webp",
+        url: "https://lumosun.vercel.app/",
+        description: "Lumosun Energy designs and installs smart solar systems that reduce bills and carbon footprint. A modern, clean website focusing on trust and clarity.",
+        testimonial: "Our online inquiries have doubled since the launch. Professional and effective.",
+        client: "Lumosun Team"
     },
     {
         id: 2,
