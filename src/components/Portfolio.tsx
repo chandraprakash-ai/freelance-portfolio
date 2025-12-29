@@ -5,109 +5,9 @@ import { Link } from "react-router-dom";
 import "./Portfolio.css";
 import { SkeletonCard } from "./SkeletonCard";
 import { slideInLeft, slideInRight, popIn, staggerContainer } from "../utils/animations";
+import { projects } from "../pages/Projects";
 
-const projects = [
-    // {
-    //     id: 1,
-    //     title: "Prasadam",
-    //     category: "F&B / Cafe",
-    //     result: "Online Menu & Orders",
-    //     image: "/prasadam-hero.webp",
-    //     altImage: "/prasadam-menu.webp",
-    //     url: "https://prasadam-cafe.vercel.app",
-    //     description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
-    //     testimonial: "The functionality is perfect for our daily operations.",
-    //     client: "Prasadam Management"
-    // },
-    {
-        id: 8,
-        title: "Lumosun Energy",
-        category: "Solar Energy Website",
-        result: "Brand Authority",
-        image: "/lumosun-hero.webp",
-        altImage: "/lumosun-alt.webp",
-        url: "https://lumosun.vercel.app/",
-        description: "Lumosun Energy designs and installs smart solar systems that reduce bills and carbon footprint. A modern, clean website focusing on trust and clarity.",
-        testimonial: "Our online inquiries have doubled since the launch. Professional and effective.",
-        client: "Lumosun Team"
-    },
-    {
-        id: 2,
-        title: "Retro Cafe AMD",
-        category: "Cafe & Lounge",
-        result: "Brand Identity",
-        image: "/retro-cafe-hero.webp",
-        altImage: "/retro-cafe-menu.webp",
-        url: "https://retro-cafe-amd.vercel.app",
-        description: "A retro-themed website capturing the unique ambience of the cafe in Ahmedabad. Focuses on visual storytelling.",
-        testimonial: "Captures our vibe perfectly.",
-        client: "Raj Roy, Manager"
-    },
-    // {
-    //     id: 3,
-    //     title: "Naram Garam",
-    //     category: "Brand Website",
-    //     result: "Direct Sales Growth",
-    //     image: "/aura-forge.webp",
-    //     altImage: "/aura-forge-alt.webp",
-    //     url: "https://naramgaram.vercel.app",
-    //     description: "A vibrant digital platform for Naram Garam, focusing on customer engagement and brand loyalty.",
-    //     testimonial: "A massive upgrade for our online presence.",
-    //     client: "Naram Garam Team"
-    // },
 
-    {
-        id: 4,
-        title: "The Woodfire Café",
-        category: "Food & Beverage Website",
-        result: "40% more table bookings",
-        image: "/woodfire.webp",
-        altImage: "/woodfire-alt.webp",
-        url: "https://woodfire.vercel.app",
-        description: "The Woodfire Café needed a modern, clean website that showcased their menu, ambience, and helped customers quickly reserve tables.",
-        testimonial: "Arcbyte transformed our online presence. We got 20 bookings online in the first week!",
-        client: "George Noman, Owner"
-    },
-
-    {
-        id: 5,
-        title: "Linea Studio",
-        category: "Architecture Portfolio",
-        result: "Minimalist Design",
-        image: "/linea-studio.webp",
-        altImage: "/linea-studio-alt.webp",
-        url: "https://linea-studios.vercel.app",
-        description: "A clean, minimalist portfolio for an architecture firm. The design focuses on negative space and typography to let the architectural work speak for itself.",
-        testimonial: "The site perfectly captures our design philosophy. Simple, elegant, and timeless.",
-        client: "Ron nikolas, Principal Architect"
-    },
-
-    {
-        id: 6,
-        title: "Nimbus Metrics",
-        category: "Analytics Dashboard",
-        result: "Real-time Insights",
-        image: "/nimbus-metrics.webp",
-        altImage: "/nimbus-metrics-alt.webp",
-        url: "https://nimbus-metrics.vercel.app",
-        description: "A comprehensive metrics dashboard designed for tracking key performance indicators in real-time. Features include customizable widgets, data visualization, and export capabilities.",
-        testimonial: "The insights we get from Nimbus are invaluable. It's clean, fast, and easy to use.",
-        client: "Nimish Kate, Product Manager"
-    },
-
-    {
-        id: 7,
-        title: "AuraForge",
-        category: "Productivity App",
-        result: "Gamified Tasks",
-        image: "/aura-forge.webp",
-        altImage: "/aura-forge-alt.webp",
-        url: "https://aura-forge.vercel.app",
-        description: "A gamified productivity platform that turns real-life tasks into quests. Features include XP tracking, leveling up, and a dungeon-crawler aesthetic to make productivity fun.",
-        testimonial: "Finally, a to-do list that I actually want to use. It makes work feel like a game.",
-        client: "Krushal Chabadiya, Indie Developer"
-    },
-];
 
 function ProjectImage({ src, alt, className, sizes }: { src: string; alt: string; className?: string; sizes?: string }) {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -207,7 +107,7 @@ export function Portfolio() {
                                 animate="visible"
                                 className="projects-grid"
                             >
-                                {projects.slice(0, 4).map((project) => (
+                                {projects.filter(project => project.featured).map((project) => (
                                     <motion.div
                                         key={project.id}
                                         variants={popIn}

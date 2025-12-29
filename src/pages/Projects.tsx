@@ -5,22 +5,38 @@ import { Link } from "react-router-dom";
 import "./Projects.css";
 import { fadeInUp, staggerContainer, scaleUp } from "../utils/animations";
 
-const projects = [
-    // {
-    //     id: 1,
-    //     title: "Prasadam",
-    //     category: "F&B / Cafe",
-    //     result: "Online Menu & Orders",
-    //     image: "/prasadam-hero.webp",
-    //     altImage: "/prasadam-menu.webp",
-    //     url: "https://prasadam-cafe.vercel.app",
-    //     description: "A modern menu-first website for Prasadam, enabling customers to easily browse offerings and place orders seamlessy.",
-    //     testimonial: "The functionality is perfect for our daily operations.",
-    //     client: "Prasadam Management"
-    // },
+export const projects = [
+    {
+        id: 1,
+        featured: true,
+        title: "Tangerine Cafe",
+        category: "F&B / Cafe",
+        result: "Online Menu & Orders",
+        image: "/tangerine-cafe-hero.png",
+        altImage: "/tangerine-cafe-alt.png",
+        url: "https://tangerine-cafe.vercel.app",
+        description: "A modern menu-first website for Tangerine Cafe, enabling customers to easily browse offerings and place orders seamlessly.",
+        testimonial: "The functionality is perfect for our daily operations.",
+        client: "Tangerine Management"
+    },
+
+    {
+        id: 9,
+        featured: true,
+        title: "The Corner Cafe",
+        category: "Cafe Business Website",
+        result: "Brand Identity",
+        image: "/corner-cafe-hero.png",
+        altImage: "/corner-cafe-alt.png",
+        url: "https://thecornercafe.vercel.app/",
+        description: "Nestled in the Old Quarter, The Corner Cafe is a living room for the community. The website reflects its colonial architecture and serene atmosphere, telling the story of every flavor.",
+        testimonial: "The best coffee in the city, hands down. The atmosphere is just magical.",
+        client: "Sarah Jenkins, Cafe Owner"
+    },
 
     {
         id: 8,
+        featured: false,
         title: "Lumosun Energy",
         category: "Solar Energy Website",
         result: "Brand Authority",
@@ -33,6 +49,7 @@ const projects = [
     },
     {
         id: 2,
+        featured: true,
         title: "Retro Cafe AMD",
         category: "Cafe & Lounge",
         result: "Brand Identity",
@@ -45,6 +62,7 @@ const projects = [
     },
     {
         id: 4,
+        featured: false,
         title: "The Woodfire Café",
         category: "Food & Beverage Website",
         result: "40% more table bookings",
@@ -57,6 +75,7 @@ const projects = [
     },
     {
         id: 5,
+        featured: true,
         title: "Linea Studio",
         category: "Architecture Portfolio",
         result: "Minimalist Design",
@@ -69,6 +88,7 @@ const projects = [
     },
     {
         id: 6,
+        featured: false,
         title: "Nimbus Metrics",
         category: "Analytics Dashboard",
         result: "Real-time Insights",
@@ -81,6 +101,7 @@ const projects = [
     },
     {
         id: 7,
+        featured: false,
         title: "AuraForge",
         category: "Productivity App",
         result: "Gamified Tasks",
