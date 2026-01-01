@@ -9,7 +9,7 @@ import { projects } from "../pages/Projects";
 
 
 
-function ProjectImage({ src, alt, className, sizes }: { src: string; alt: string; className?: string; sizes?: string }) {
+function ProjectImage({ src, alt, className, sizes, imageFit }: { src: string; alt: string; className?: string; sizes?: string; imageFit?: string }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const isMainImage = className?.includes('main-image');
 
@@ -32,7 +32,8 @@ function ProjectImage({ src, alt, className, sizes }: { src: string; alt: string
                     transition: isMainImage ? 'opacity 0.5s ease-in-out, transform 0.5s' : 'opacity 0.5s ease-in-out',
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover'
+                    objectFit: (imageFit as any) || 'cover',
+                    objectPosition: 'top center'
                 }}
                 onLoad={() => setIsLoaded(true)}
                 loading="lazy"
@@ -122,6 +123,7 @@ export function Portfolio() {
                                                     alt={`Web Design Project: ${project.title} - ${project.category}`}
                                                     className="main-image"
                                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                                                    imageFit={(project as any).imageFit}
                                                 />
 
                                                 <div className="overlay" />

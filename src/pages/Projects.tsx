@@ -42,6 +42,7 @@ export const projects = [
         result: "Brand Authority",
         image: "/lumosun-hero.webp",
         altImage: "/lumosun-alt.webp",
+        imageFit: "fill",
         url: "https://lumosun.vercel.app/",
         description: "Lumosun Energy designs and installs smart solar systems that reduce bills and carbon footprint. A modern, clean website focusing on trust and clarity.",
         testimonial: "Our online inquiries have doubled since the launch. Professional and effective.",
@@ -55,6 +56,7 @@ export const projects = [
         result: "Brand Identity",
         image: "/retro-cafe-hero.webp",
         altImage: "/retro-cafe-menu.webp",
+        imageFit: "fill",
         url: "https://retro-cafe-amd.vercel.app",
         description: "A retro-themed website capturing the unique ambience of the cafe in Ahmedabad. Focuses on visual storytelling.",
         testimonial: "Captures our vibe perfectly.",
@@ -124,7 +126,7 @@ export function Projects() {
         // Update meta description
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
-            metaDescription.setAttribute('content', 'Explore our complete portfolio of premium websites built for cafes, restaurants, startups, and businesses. View case studies and live demos.');
+            metaDescription.setAttribute('content', 'Explore my complete portfolio of premium websites built for cafes, restaurants, startups, and businesses. View case studies and live demos.');
         }
 
         // Cleanup: restore original title on unmount

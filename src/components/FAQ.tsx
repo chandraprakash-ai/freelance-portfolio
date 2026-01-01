@@ -9,7 +9,7 @@ const faqs = [
     { q: "Do you provide hosting?", a: "Yes, I can set up hosting on Vercel or Netlify. The first year is often free on these platforms." },
     { q: "What about revisions?", a: "I offer 2 rounds of revisions during the design phase to ensure you are happy." },
     { q: "Does price include domain?", a: "No, you will need to purchase the domain (approx ₹800/year), but I can help you connect it." },
-    { q: "What is your payment schedule?", a: "40% advance to start, 40% after design approval, and 20% before final launch." }
+    { q: "What is your payment schedule?", a: "30% advance to start, 30% after design approval, and 40% before final launch." }
 ];
 
 export function FAQ() {

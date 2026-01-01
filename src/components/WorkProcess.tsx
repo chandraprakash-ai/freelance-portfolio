@@ -22,7 +22,7 @@ export function WorkProcess() {
                     viewport={{ once: true }}
                     className="process-title"
                 >
-                    How We Work
+                    How I Work
                 </motion.h2>
                 <motion.div
                     variants={staggerContainer}

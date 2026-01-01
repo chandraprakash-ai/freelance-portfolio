@@ -217,7 +217,7 @@ export function PricingIndia() {
 
                 {/* Process Section */}
                 <section className="india-process-section">
-                    <h2 className="section-title">How We Work</h2>
+                    <h2 className="section-title">How I Work</h2>
                     <motion.div
                         className="india-process-steps"
                         variants={fadeInUp}

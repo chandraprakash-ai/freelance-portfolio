@@ -136,9 +136,9 @@ export function Contact() {
                         <div className="payment-terms-box">
                             <h3 className="payment-title">Payment Terms</h3>
                             <ul className="payment-list">
-                                <li>• 40% Advance to start</li>
-                                <li>• 40% After design approval</li>
-                                <li>• 20% Before final launch</li>
+                                <li>• 30% Advance to start</li>
+                                <li>• 30% After design approval</li>
+                                <li>• 40% Before final launch</li>
                             </ul>
                         </div>
                     </motion.div>
