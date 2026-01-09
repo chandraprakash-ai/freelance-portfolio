@@ -7,8 +7,8 @@
 
 .process-container {
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 2rem;
     padding: 0 1.5rem;
 }
 
@@ -128,7 +128,7 @@
 
 @media (min-width: 1024px) {
     .process-container {
-        padding: 0 4rem;
+        padding: 0 1.5rem;
     }
 }
 

@@ -7,7 +7,7 @@
 
 .services-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 87.5rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -157,7 +157,7 @@
 
 @media (min-width: 1024px) {
     .services-container {
-        padding: 0 4rem;
+        padding: 0 1.5rem;
     }
 }
 
